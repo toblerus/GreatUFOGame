@@ -1,5 +1,7 @@
 ﻿using System.Collections;
-public class GameAcademy : BasicAcademy
+using MLAgents;
+
+public class GameAcademy : Academy
 {
     public override void InitializeAcademy()
     {
