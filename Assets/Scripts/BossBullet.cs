@@ -2,6 +2,8 @@
 
 public class BossBullet : BaseBullet
 {
+    [SerializeField] private float _invincibilityDuration;
+
     public override void DestroyBullet()
     {
         Destroy(gameObject);
@@ -16,11 +18,10 @@ public class BossBullet : BaseBullet
 
     protected override void OnCollide(GameObject collidedObjects)
     {
-
-        var bullet = collidedObjects.GetComponent<BaseBullet>();
-        if (bullet)
+        var playerHealth = collidedObjects.GetComponent<PlayerHealth>();
+        if (playerHealth)
         {
-            bullet.DestroyBullet();
+            playerHealth.Damage(Damage, _invincibilityDuration);
         }
     }
 }

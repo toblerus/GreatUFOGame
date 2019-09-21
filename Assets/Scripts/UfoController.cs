@@ -8,16 +8,14 @@ using Random = UnityEngine.Random;
 public class UfoController : MonoBehaviour
 {
     [Serializable]
-    public class AttackAnchorMapping
+    public class UfoAttackMapping
     {
+        public UfoAttackConfig Config;
         public Transform Anchor;
-        public UfoAttackType AttackType;
     }
-
-    [SerializeField] private List<UfoAttackConfig> _attacks;
+    
     [SerializeField] private Health _health;
-    [SerializeField] private Transform _cannonPosition;
-    [SerializeField] private List<AttackAnchorMapping> _anchorMappings;
+    [SerializeField] private List<UfoAttackMapping> _attackMappings;
     
     private void Awake()
     {
@@ -28,11 +26,9 @@ public class UfoController : MonoBehaviour
     {
         while (!_health.IsDead)
         {
-            var selectedAttack = _attacks[Random.Range(0, _attacks.Count)];
+            var selectedAttack = _attackMappings[Random.Range(0, _attackMappings.Count)];
 
-            yield return selectedAttack.CreateBullets(
-                _anchorMappings.First(mapping => mapping.AttackType == selectedAttack.AttackType).Anchor,
-                _health);
+            yield return selectedAttack.Config.CreateBullets(selectedAttack.Anchor, _health);
         }
     }
 }

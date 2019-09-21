@@ -21,11 +21,5 @@ public class PlayerBullet : BaseBullet
         {
             bossHealth.Damage(Damage, null);
         }
-
-        var bullet = collidedObjects.GetComponent<BaseBullet>();
-        if (bullet)
-        {
-            bullet.DestroyBullet();
-        }
     }
 }

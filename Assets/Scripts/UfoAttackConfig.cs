@@ -8,11 +8,8 @@ public abstract class UfoAttackConfig : ScriptableObject
     [SerializeField] private float _attackDelay;
     [SerializeField] private float _coolDownDelay;
     [Space]
-    [SerializeField] private UfoAttackType _attackType;
     [SerializeField] private float _projectileSpeed;
     [SerializeField] private List<BaseBullet> _bullets;
-    
-    public UfoAttackType AttackType => _attackType;
 
     protected float AttackDelay => _attackDelay;
     protected float ProjectileSpeed => _projectileSpeed;

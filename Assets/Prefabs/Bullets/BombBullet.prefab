@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8618021018823175109}
   - component: {fileID: 8618021018823175108}
   - component: {fileID: 8618021018823175106}
-  - component: {fileID: 2078637632043019374}
   - component: {fileID: 583379406095412585}
+  - component: {fileID: 645137587057644469}
   m_Layer: 0
-  m_Name: SprayBullet2
+  m_Name: BombBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8618021018823175111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -104,22 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2078637632043019374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8618021018823175111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 335a60d0b05843698e384e383f348d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidBody: {fileID: 8618021018823175106}
-  _localShotDirection: {x: 0.1, y: 1}
-  _bulletType: 20
-  _damage: 2
 --- !u!58 &583379406095412585
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +120,22 @@ CircleCollider2D:
   m_Offset: {x: -0.033, y: 0.157}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &645137587057644469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618021018823175111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dde89bd422a4012bbac86b5447da5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidBody: {fileID: 8618021018823175106}
+  _localShotDirection: {x: 0, y: 0}
+  _bulletType: 30
+  _damage: 0
+  _explosionEffect: {fileID: 0}
+  _explosionDelay: 3
+  _explosionDuration: 0.25
