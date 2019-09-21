@@ -18,5 +18,5 @@ MonoBehaviour:
   _projectileSpeed: 2
   _projectileCount: 1
   _bullets:
-  - {fileID: 2078637632043019374, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
+  - {fileID: -3835194050501035488, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
   _laserLifeTime: 0.5

@@ -18,4 +18,4 @@ MonoBehaviour:
   _projectileSpeed: 0.25
   _projectileCount: 15
   _bullets:
-  - {fileID: 2078637632043019374, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
+  - {fileID: -6477015756842047207, guid: d0ebc70beb656424d8d950de36bdabea, type: 3}
