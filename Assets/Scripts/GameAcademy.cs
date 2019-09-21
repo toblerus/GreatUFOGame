@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using MLAgents;
+﻿using MLAgents;
 
 public class GameAcademy : Academy
 {
@@ -14,6 +13,11 @@ public class GameAcademy : Academy
         foreach (var control in FindObjectsOfType<ManualPlayerControl>())
         {
             control.enabled = false;
+        }
+
+        foreach (var agent in FindObjectsOfType<PlayerAgent>())
+        {
+            agent.enabled = true;
         }
 
         PlayerArmor.Instance.MaxArmor = 0;
