@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float projectileSpeed = 5;
     private float time = 0;
     private bool exit;
-    [SerializeField] private int playerIndex = 0;
-    [SerializeField] private bool isShooting = false;
 
     [Header("Controls")]
     public float horizontalMovement;
@@ -42,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if(isShooting == true)
+        if(isFiring == true)
         {
             movementSpeed = loweredMovementSpeed;
         }
@@ -50,14 +48,8 @@ public class PlayerController : MonoBehaviour
         {
             movementSpeed = standardMovementSpeed;
         }
-        string vertical = playerIndex == 1
-            ? "Vertical1"
-            : "Vertical2";
-        string horizontal = playerIndex == 1
-            ? "Horizontal1"
-            : "Horizontal2";
-        float y = Input.GetAxisRaw(vertical) * movementSpeed;
-        float x = Input.GetAxisRaw(horizontal) * movementSpeed;
+        float y = verticalMovement * movementSpeed;
+        float x = horizontalMovement * movementSpeed;
         x *= Time.deltaTime;
         y *= Time.deltaTime;
         transform.Translate(x, y, 0);
@@ -65,12 +57,8 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        string fire = playerIndex == 1
-            ? "Fire1"
-            : "Fire2";
-        if ((Input.GetButton(fire)) && (time > shootDelay))
+        if (isFiring && (time > shootDelay))
         {
-            isShooting = true;
             time = 0;
             var instantiatedProjectile = Instantiate(projectile, playerArmTip.transform.position, Quaternion.identity);
             var projectileScript = instantiatedProjectile.GetComponent<Projectile>();
@@ -78,11 +66,6 @@ public class PlayerController : MonoBehaviour
             projectileScript.projectileSpeed = projectileSpeed;
         }
         time += Time.deltaTime;
-
-        if(Input.GetButtonUp(fire))
-        {
-            isShooting = false;
-        }
     }
 
     private void ArmFaceUFO()

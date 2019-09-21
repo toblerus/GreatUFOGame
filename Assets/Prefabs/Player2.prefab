@@ -120,6 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4385273611043211746}
+  - component: {fileID: -3137212152195378389}
   - component: {fileID: 4385273611043211745}
   - component: {fileID: 4385273611043211744}
   - component: {fileID: 4385273611043211743}
@@ -146,6 +147,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3137212152195378389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385273611043211742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9cc9cc73384418bd509a5b2fc4b77b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 4385273611043211745}
+  playerIndex: 2
 --- !u!114 &4385273611043211745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +184,9 @@ MonoBehaviour:
   projectileSpeed: 5
   playerIndex: 1
   isShooting: 0
+  horizontalMovement: 0
+  verticalMovement: 0
+  isFiring: 0
 --- !u!50 &4385273611043211744
 Rigidbody2D:
   serializedVersion: 4
