@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GoldenOutline
+  m_Name: SpriteColorOverlay
   m_Shader: {fileID: 4800000, guid: f805fa9e6edb9044da4594f23cce0308, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _OUTLINEACTIVE_ON
   m_LightmapFlags: 4

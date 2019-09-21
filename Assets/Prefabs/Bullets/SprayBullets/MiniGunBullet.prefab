@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8618021018823175109}
   - component: {fileID: 8618021018823175108}
   - component: {fileID: 8618021018823175106}
-  - component: {fileID: 2078637632043019374}
   - component: {fileID: 583379406095412585}
+  - component: {fileID: -3835194050501035488}
   m_Layer: 0
   m_Name: MiniGunBullet
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 17bbfc660073c154db749bb2ad9aa27f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c8fb9a7fec44344ca5ad6b6568ad5c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,22 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2078637632043019374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8618021018823175111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 335a60d0b05843698e384e383f348d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidBody: {fileID: 8618021018823175106}
-  _maxSideWayOffset: 2
-  _bulletType: 20
-  _damage: 2
 --- !u!58 &583379406095412585
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +120,20 @@ CircleCollider2D:
   m_Offset: {x: -0.033, y: 0.157}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &-3835194050501035488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618021018823175111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d67c648ca8849939924bc80f5f506a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidBody: {fileID: 8618021018823175106}
+  _maxSideWayOffset: 2
+  _bulletType: 20
+  _damage: 2
+  _invincibilityDuration: 1

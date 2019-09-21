@@ -1,6 +1,7 @@
 ﻿public enum ColorTint
 {
     None = 0,
-    Golden = 10,
-    Red = 20
+    OutlineAndBody = 10,
+    BodyOnly = 20,
+    OutlineOnly = 30
 }
