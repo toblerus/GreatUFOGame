@@ -17,7 +17,7 @@ public class PlayerArmor : MonoBehaviour
         var armorLeft = CurrentArmor - damage;
         CurrentArmor = Math.Max(armorLeft, 0);
 
-        return Math.Min(armorLeft, 0);
+        return -1 * Math.Min(armorLeft, 0);
     }
 
     public void HealArmor(int healing)

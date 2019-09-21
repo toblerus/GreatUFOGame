@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 4385273611043211745}
   - component: {fileID: 4385273611043211744}
   - component: {fileID: 4385273611043211743}
+  - component: {fileID: 2098471954}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -178,6 +179,7 @@ MonoBehaviour:
   playerArm: {fileID: 4385273610956156483}
   playerArmTip: {fileID: 4385273611177937838}
   rigidbody2d: {fileID: 4385273611043211744}
+  healthscript: {fileID: 2098471954}
   ufoPosition: {fileID: 0}
   loweredMovementSpeed: 2.5
   standardMovementSpeed: 5
@@ -233,6 +235,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78928703, y: 0.78928703}
   m_EdgeRadius: 0
+--- !u!114 &2098471954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385273611043211742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a3c1cb8c1b44b3b4ee20406529ae11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 0
 --- !u!1 &4385273611064079802
 GameObject:
   m_ObjectHideFlags: 0

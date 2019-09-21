@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerArm;
     [SerializeField] private GameObject playerArmTip;
     [SerializeField] private Rigidbody2D rigidbody2d;
+    [SerializeField] private PlayerHealth healthscript;
     public Transform ufoPosition;
 
     [Header("Player")]
@@ -35,9 +36,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Shoot();
-        ArmFaceUFO();
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            healthscript.Damage(1, 0);
+        }
+        
+        if (!healthscript.IsDead)
+        {
+            Move();
+            Shoot();
+            ArmFaceUFO();
+        }
     }
 
     private void Move()
