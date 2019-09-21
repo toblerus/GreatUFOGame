@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2078637632043019374}
   - component: {fileID: 583379406095412585}
   m_Layer: 0
-  m_Name: MiniGunBullet5
+  m_Name: SprayBullet5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.033, y: 0.157}
