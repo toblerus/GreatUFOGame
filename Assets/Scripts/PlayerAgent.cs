@@ -1,13 +1,12 @@
-﻿using MLAgents;
+﻿using System.Linq;
+using MLAgents;
 using MLAgents.CommunicatorObjects;
 using UnityEngine;
 
 public class PlayerAgent : Agent
 {
-    private readonly Vector2 _player1Vector = new Vector2(1, 1);
-    private readonly Vector2 _player2Vector = new Vector2(2, 2);
-    private readonly Vector2 _bossVector = new Vector2(3, 3);
-
+    [SerializeField] private PlayerController _playerController;
+    
     public override void InitializeAgent()
     {
 
@@ -15,16 +14,21 @@ public class PlayerAgent : Agent
 
     public override void CollectObservations()
     {
-        AddVectorObs(_player1Vector);
-        AddVectorObs(_player2Vector);
-        AddVectorObs(_bossVector);
+        var players = FindObjectsOfType<PlayerController>();
+
+        var self = players.Single(player => player.gameObject == gameObject);
+        var other = players.Single(player => player.gameObject != gameObject);
+
+        AddVectorObs((Vector2) self.transform.localPosition);
+        AddVectorObs((Vector2) other.transform.localPosition);
+        AddVectorObs((Vector2) FindObjectOfType<Boss>().transform.localPosition);
     }
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
-        Debug.Log(vectorAction[0]);
-        Debug.Log(vectorAction[1]);
-        Debug.Log(vectorAction[2]);
+        _playerController.horizontalMovement = Mathf.Clamp(vectorAction[0], -1, 1);
+        _playerController.verticalMovement = Mathf.Clamp(vectorAction[1], -1, 1);
+        _playerController.isFiring = vectorAction[2] > 0;
     }
 
     public override void AgentAction(float[] vectorAction, string textAction, CustomAction customAction)
@@ -39,7 +43,11 @@ public class PlayerAgent : Agent
 
     public override void AgentReset()
     {
+        var health = GetComponent<PlayerHealth>();
 
+        health.CurrentHealth = health.MaxHealth;
+        health.IsDead = false;
+        health.IsInvincible = false;
     }
 
     public void OnTakingDamage(int damage)
@@ -47,13 +55,14 @@ public class PlayerAgent : Agent
         AddReward(-damage);
     }
 
-    public void OnDealingDamage()
+    public void OnDealingDamage(int damage)
     {
-        AddReward(1);
+        AddReward(damage);
     }
 
     public void OnDeath()
     {
+        AddReward(-100);
         Done();
     }
 }

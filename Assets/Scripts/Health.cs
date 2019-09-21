@@ -4,12 +4,13 @@ using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
+    public int MaxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
     [SerializeField] private int _maxHealth;
 
-    public int CurrentHealth { get; private set; }
+    public int CurrentHealth { get; set; }
 
-    public bool IsInvincible { get; private set; } = false;
-    public bool IsDead { get; private set; } = false;
+    public bool IsInvincible { get; set; } = false;
+    public bool IsDead { get; set; } = false;
 
     public abstract void Heal(int healing);
 

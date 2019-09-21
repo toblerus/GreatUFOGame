@@ -5,6 +5,7 @@ public class PlayerArmor : MonoBehaviour
 {
     public static PlayerArmor Instance { get; private set; }
 
+    public int MaxArmor { get { return _maxArmor; } set { _maxArmor = value; } }
     [SerializeField] private int _maxArmor;
 
     public int CurrentArmor { get; private set; }
