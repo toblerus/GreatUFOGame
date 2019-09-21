@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float projectileSpeed = 5;
     private float time = 0;
     private bool exit;
-    GamePadState state;
+    [SerializeField] private int playerIndex = 0;
 
     void Start()
     {
@@ -35,18 +34,27 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-            float y = Input.GetAxisRaw("Vertical") * movementSpeed;
-            float x = Input.GetAxisRaw("Horizontal") * movementSpeed;
-            x *= Time.deltaTime;
-            y *= Time.deltaTime;
-            transform.Translate(x, y, 0);
+        string vertical = playerIndex == 1
+            ? "Vertical1"
+            : "Vertical2";
+        string horizontal = playerIndex == 1
+            ? "Horizontal1"
+            : "Horizontal2";
+        float y = Input.GetAxisRaw(vertical) * movementSpeed;
+        float x = Input.GetAxisRaw(horizontal) * movementSpeed;
+        x *= Time.deltaTime;
+        y *= Time.deltaTime;
+        transform.Translate(x, y, 0);
     }
 
     private void Shoot()
     {
-        if ((Input.GetAxisRaw("Fire1") == 1) && (time > shootDelay))
+        string fire = playerIndex == 1
+            ? "Fire1"
+            : "Fire2";
+        if ((Input.GetButton(fire)) && (time > shootDelay))
         {
-            StartCoroutine(vibrate(PlayerIndex.One, 0.05f));
+            
             time = 0;
             var instantiatedProjectile = Instantiate(projectile, playerArmTip.transform.position, Quaternion.identity);
             var projectileScript = instantiatedProjectile.GetComponent<Projectile>();
@@ -61,17 +69,18 @@ public class PlayerController : MonoBehaviour
         Vector3 diff = ufoPosition.transform.position - transform.position;
         diff.Normalize();
 
-       float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         playerArm.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
-
+/*
     IEnumerator vibrate(PlayerIndex index, float duration)
     {
         GamePad.SetVibration(index, 1f, 1f);
-        
+
         yield return new WaitForSeconds(duration);
         GamePad.SetVibration(index, 0f, 0f);
 
         yield return null;
     }
+    */
 }
