@@ -7,12 +7,12 @@ public class PlayerService : MonoBehaviour
 
     private PlayerController[] _players;
 
-    private PlayerController ClosestPlayer(Vector2 currentPosition)
+    public PlayerController ClosestPlayer(Vector2 currentPosition)
     {
         return _players.OrderBy(controller => Vector2.Distance(currentPosition, controller.transform.position)).First();
     }
 
-    private float DistanceToClosestPlayer(Vector2 currentPosition)
+    public float DistanceToClosestPlayer(Vector2 currentPosition)
     {
         return _players.Min(controller => Vector2.Distance(currentPosition, controller.transform.position));
     }
