@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int playerIndex = 0;
     [SerializeField] private bool isShooting = false;
 
+    [Header("Controls")]
+    public float horizontalMovement;
+    public float verticalMovement;
+    public bool isFiring;
+
     void Start()
     {
 
