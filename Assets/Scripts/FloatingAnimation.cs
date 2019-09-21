@@ -12,7 +12,7 @@ public class FloatingAnimation : MonoBehaviour
 
     private void Start()
     {
-        _startPosition = transform.position;
+        _startPosition = transform.localPosition;
     }
 
     private void FixedUpdate()
@@ -20,6 +20,6 @@ public class FloatingAnimation : MonoBehaviour
         _floatingPosition.x = Mathf.Sin(_horizontalSpeed * Time.time) * _horizontalDistance;
         _floatingPosition.y = Mathf.Sin(_verticalSpeed * Time.time) * _verticalDistance;
 
-        transform.position = _startPosition + _floatingPosition;
+        transform.localPosition = _startPosition + _floatingPosition;
     }
 }
