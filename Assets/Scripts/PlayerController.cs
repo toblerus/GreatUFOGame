@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float projectileSpeed = 5;
     private float time = 0;
     private bool exit;
+    private int playerIndex = 0;
 
     void Start()
     {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        if ((Input.GetButton("Fire1")) && (time > shootDelay))
+        if ((Input.GetAxisRaw("Fire1") == 1) && (time > shootDelay))
         {
             time = 0;
             var instantiatedProjectile = Instantiate(projectile, playerArmTip.transform.position, Quaternion.identity);
