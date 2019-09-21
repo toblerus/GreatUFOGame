@@ -510,6 +510,31 @@ PrefabInstance:
       propertyPath: playerIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8615260853989583754, guid: 7386026018cd1c240b2c2b421dbdbe9a,
+        type: 3}
+      propertyPath: ufoPosition
+      value: 
+      objectReference: {fileID: 979913384}
+    - target: {fileID: 8615260852586801982, guid: 7386026018cd1c240b2c2b421dbdbe9a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.55260825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615260852586801982, guid: 7386026018cd1c240b2c2b421dbdbe9a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615260852586801982, guid: 7386026018cd1c240b2c2b421dbdbe9a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615260852586801982, guid: 7386026018cd1c240b2c2b421dbdbe9a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7386026018cd1c240b2c2b421dbdbe9a, type: 3}
 --- !u!1 &1941535713

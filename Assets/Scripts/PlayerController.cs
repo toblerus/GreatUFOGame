@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public Transform ufoPosition;
 
     [Header("Player")]
-    [SerializeField] private float movementSpeed;
+    private float movementSpeed = 0;
+    [SerializeField] private float loweredMovementSpeed = 2.5f;
+    [SerializeField] private float standardMovementSpeed = 5f;
     [SerializeField] private float shootDelay = 0.1f;
     [SerializeField] private float projectileSpeed = 5;
     private float time = 0;
     private bool exit;
     [SerializeField] private int playerIndex = 0;
+    [SerializeField] private bool isShooting = false;
 
     void Start()
     {
@@ -25,7 +28,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         Move();
         Shoot();
@@ -34,6 +37,14 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        if(isShooting == true)
+        {
+            movementSpeed = loweredMovementSpeed;
+        }
+        else
+        {
+            movementSpeed = standardMovementSpeed;
+        }
         string vertical = playerIndex == 1
             ? "Vertical1"
             : "Vertical2";
@@ -54,7 +65,7 @@ public class PlayerController : MonoBehaviour
             : "Fire2";
         if ((Input.GetButton(fire)) && (time > shootDelay))
         {
-            
+            isShooting = true;
             time = 0;
             var instantiatedProjectile = Instantiate(projectile, playerArmTip.transform.position, Quaternion.identity);
             var projectileScript = instantiatedProjectile.GetComponent<Projectile>();
@@ -62,6 +73,11 @@ public class PlayerController : MonoBehaviour
             projectileScript.projectileSpeed = projectileSpeed;
         }
         time += Time.deltaTime;
+
+        if(Input.GetButtonUp(fire))
+        {
+            isShooting = false;
+        }
     }
 
     private void ArmFaceUFO()
