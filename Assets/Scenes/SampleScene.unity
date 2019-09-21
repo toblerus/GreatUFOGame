@@ -611,10 +611,6 @@ PrefabInstance:
       propertyPath: ufoPosition
       value: 
       objectReference: {fileID: 979913384}
-    - target: {fileID: 2098471954, guid: ee6951ebb5fbc3146b1e8a84a137660d, type: 3}
-      propertyPath: _maxHealth
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee6951ebb5fbc3146b1e8a84a137660d, type: 3}
 --- !u!1001 &3749389907225219975
@@ -689,9 +685,5 @@ PrefabInstance:
       propertyPath: ufoPosition
       value: 
       objectReference: {fileID: 979913384}
-    - target: {fileID: 86240812, guid: 570e5ba73a7840744a7f2694b391ae88, type: 3}
-      propertyPath: _maxHealth
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570e5ba73a7840744a7f2694b391ae88, type: 3}

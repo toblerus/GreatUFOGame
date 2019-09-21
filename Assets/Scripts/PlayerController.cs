@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && GetComponent<ManualPlayerControl>().PlayerIndex == 1)
         {
             healthscript.Damage(1, 0);
         }
