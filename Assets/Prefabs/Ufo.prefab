@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232431245948814458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.168, y: 3.615, z: 0}
+  m_LocalPosition: {x: -0.168, y: 6.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3792875674429924958}
@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 4344449530865935576}
   - component: {fileID: 6030552897040263788}
   - component: {fileID: 2707686786677257231}
+  - component: {fileID: 483435664}
   m_Layer: 0
   m_Name: Ufo
   m_TagString: Untagged
@@ -103,6 +104,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 120
   _damagePerSecond: 1
+--- !u!114 &483435664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344449530865935559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4521ae963d8a16e489bf15bcb9971a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _horizontalSpeed: 0.1
+  _horizontalDistance: 1
+  _verticalSpeed: 1
+  _verticalDistance: 0.1
 --- !u!1 &4344449531293240047
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +132,7 @@ GameObject:
   m_Layer: 0
   m_Name: UFOPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -127,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4344449531293240047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 3.18, z: 0}
+  m_LocalPosition: {x: -0.186, y: 5.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4344449530865935576}

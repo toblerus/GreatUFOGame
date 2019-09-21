@@ -285,6 +285,7 @@
           <e p="BulletType.cs" t="Include" />
           <e p="ColorShaderUpdater.cs" t="Include" />
           <e p="ColorTint.cs" t="Include" />
+          <e p="FloatingAnimation.cs" t="Include" />
           <e p="GameAcademy.cs" t="Include" />
           <e p="Health.cs" t="Include" />
           <e p="InvincibilityPickUp.cs" t="Include" />
@@ -298,7 +299,6 @@
           <e p="PlayerHealth.cs" t="Include" />
           <e p="PlayerService.cs" t="Include" />
           <e p="ScreenShakeService.cs" t="Include" />
-          <e p="UFOAnimation.cs" t="Include" />
           <e p="UfoAttackConfig.cs" t="Include" />
           <e p="UfoBombThrowerConfig.cs" t="Include" />
           <e p="UfoController.cs" t="Include" />
