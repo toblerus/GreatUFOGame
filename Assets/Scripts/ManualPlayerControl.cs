@@ -4,7 +4,11 @@ public class ManualPlayerControl : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
     [SerializeField] private int playerIndex;
-    public int PlayerIndex { get { return playerIndex; } }
+
+    public int PlayerIndex
+    {
+        get { return playerIndex; }
+    }
 
     void FixedUpdate()
     {
