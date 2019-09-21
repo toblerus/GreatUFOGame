@@ -2,6 +2,6 @@
 
 public interface IPickUp
 {
-    bool IsCollector(GameObject collider);
-    bool OnCollection(GameObject collider);
+    bool IsCollector(GameObject collidedObject);
+    void OnCollection(GameObject collidedObject);
 }

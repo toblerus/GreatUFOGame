@@ -13,8 +13,8 @@ public abstract class BasePickUp : MonoBehaviour, IPickUp
         }
     }
 
-    public abstract bool IsCollector(GameObject collider);
-    public abstract bool OnCollection(GameObject collider);
+    public abstract bool IsCollector(GameObject collidedObject);
+    public abstract void OnCollection(GameObject collidedObject);
 
     public void Spawn(Vector2 position, float? timeOut)
     {
