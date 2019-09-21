@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 4385273611043211744}
   - component: {fileID: 4385273611043211743}
   - component: {fileID: 2098471954}
+  - component: {fileID: -5628326644165643032}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -247,7 +248,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1
-  _playerAgent: {fileID: 0}
+  _playerAgent: {fileID: -5628326644165643032}
+--- !u!114 &-5628326644165643032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385273611043211742}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5da6f7bcb35b6045bbec82b2e90f092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 11400000, guid: 71dc992324581e6448486b6328a62cc8, type: 2}
+  agentParameters:
+    agentCameras: []
+    agentRenderTextures: []
+    maxStep: 0
+    resetOnDone: 1
+    onDemandDecision: 0
+    numberOfActionsBetweenDecisions: 1
+  _playerController: {fileID: 0}
 --- !u!1 &4385273611064079802
 GameObject:
   m_ObjectHideFlags: 0

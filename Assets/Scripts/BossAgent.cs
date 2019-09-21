@@ -1,13 +1,10 @@
-﻿using MLAgents;
+﻿using System.Linq;
+using MLAgents;
 using MLAgents.CommunicatorObjects;
 using UnityEngine;
 
 public class BossAgent : Agent
 {
-    private readonly Vector2 _player1Vector = new Vector2(1, 1);
-    private readonly Vector2 _player2Vector = new Vector2(2, 2);
-    private readonly Vector2 _bossVector = new Vector2(3, 3);
-    
     public override void InitializeAgent()
     {
 
@@ -15,16 +12,23 @@ public class BossAgent : Agent
 
     public override void CollectObservations()
     {
-        AddVectorObs(_player1Vector);
-        AddVectorObs(_player2Vector);
-        AddVectorObs(_bossVector);
+        var players = FindObjectsOfType<PlayerController>();
+        var player1 = players.Single(player => player.name == "Player1");
+        var player2 = players.Single(player => player.name == "Player2");
+        
+        AddVectorObs(transform.localPosition);
+        AddVectorObs(player1.transform.localPosition);
+        AddVectorObs(player1.isFiring);
+        AddVectorObs(player2.transform.localPosition);
+        AddVectorObs(player1.isFiring);
     }
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
-        Debug.Log(vectorAction[0]);
-        Debug.Log(vectorAction[1]);
-        Debug.Log(vectorAction[2]);
+        var boss = GetComponent<Boss>();
+
+        boss.HorizontalMovement = Mathf.Clamp(vectorAction[0], -1, 1);
+        boss.VerticalMovement = Mathf.Clamp(vectorAction[1], -1, 1);
     }
 
     public override void AgentAction(float[] vectorAction, string textAction, CustomAction customAction)
@@ -42,13 +46,13 @@ public class BossAgent : Agent
 
     }
 
-    public void OnTakingDamage()
+    public void OnTakingDamage(int damage)
     {
-        AddReward(-10);
+        AddReward(damage);
     }
 
-    public void OnDealingDamage()
+    public void OnDamageDealt(int damage)
     {
-        AddReward(1);
+        AddReward(damage);
     }
 }
