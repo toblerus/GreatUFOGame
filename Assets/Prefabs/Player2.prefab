@@ -182,8 +182,6 @@ MonoBehaviour:
   standardMovementSpeed: 5
   shootDelay: 0.1
   projectileSpeed: 5
-  playerIndex: 1
-  isShooting: 0
   horizontalMovement: 0
   verticalMovement: 0
   isFiring: 0
