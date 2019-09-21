@@ -36,13 +36,15 @@ public class PlayerController : MonoBehaviour
         {
             healthscript.Damage(1, 0);
         }
-        
-        if (!healthscript.IsDead)
+
+        if (healthscript.IsDead)
         {
-            Move();
-            Shoot();
-            ArmFaceUFO();
+            return;
         }
+        
+        Move();
+        Shoot();
+        RotateTowardsUfo();
     }
 
     private void Move()
@@ -74,7 +76,7 @@ public class PlayerController : MonoBehaviour
         time += Time.deltaTime;
     }
 
-    private void ArmFaceUFO()
+    private void RotateTowardsUfo()
     {
         var diff = ufoPosition.transform.position - transform.position;
         diff.Normalize();
