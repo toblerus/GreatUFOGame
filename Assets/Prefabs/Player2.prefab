@@ -188,6 +188,8 @@ MonoBehaviour:
   horizontalMovement: 0
   verticalMovement: 0
   isFiring: 0
+  _screenShakeStrength: {x: 0.05, y: 0.05, z: 0.05}
+  _shakeDuration: 0.25
 --- !u!50 &4385273611043211744
 Rigidbody2D:
   serializedVersion: 4

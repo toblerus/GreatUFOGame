@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using DG.Tweening;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,13 +11,13 @@ public class PlayerController : MonoBehaviour
     public Transform ufoPosition;
 
     [Header("Player")]
-    private float movementSpeed = 0;
-    private Vector2 movePosition = new Vector2();
+    private float movementSpeed;
+    private Vector2 movePosition;
     [SerializeField] private float loweredMovementSpeed = 2.5f;
     [SerializeField] private float standardMovementSpeed = 5f;
     [SerializeField] private float shootDelay = 0.1f;
     [SerializeField] private float projectileSpeed = 5;
-    private float time = 0;
+    private float time;
     private bool exit;
 
     [Header("Controls")]
@@ -28,15 +25,14 @@ public class PlayerController : MonoBehaviour
     public float verticalMovement;
     public bool isFiring;
 
-    void Start()
-    {
-        
-    }
-
-
+    [Header("Screen Shake")] 
+    [SerializeField] private Vector3 _screenShakeStrength;
+    [SerializeField] private float _shakeDuration = .2f;
+    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GetComponent<ManualPlayerControl>().PlayerIndex == 1)
+        if (Input.GetKeyDown(KeyCode.Space) 
+            && GetComponent<ManualPlayerControl>().PlayerIndex == 1)
         {
             healthscript.Damage(1, 0);
         }
@@ -51,18 +47,15 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if (isFiring == true)
-        {
-            movementSpeed = loweredMovementSpeed;
-        }
-        else
-        {
-            movementSpeed = standardMovementSpeed;
-        }
-        float y = verticalMovement * movementSpeed;
-        float x = horizontalMovement * movementSpeed;
+        movementSpeed = isFiring 
+            ? loweredMovementSpeed 
+            : standardMovementSpeed;
+        
+        var y = verticalMovement * movementSpeed;
+        var x = horizontalMovement * movementSpeed;
         x *= Time.deltaTime;
         y *= Time.deltaTime;
+        
         movePosition.x = x;
         movePosition.y = y;
         rigidbody2d.MovePosition(rigidbody2d.position + movePosition);
@@ -76,17 +69,18 @@ public class PlayerController : MonoBehaviour
             var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
             spawnedBullet.MoveTowards(ufoPosition.position - transform.position, projectileSpeed);
             spawnedBullet.name += name;
+            ScreenShakeService.Instance.ShakeCamera(_shakeDuration, _screenShakeStrength);
         }
         time += Time.deltaTime;
     }
 
     private void ArmFaceUFO()
     {
-        Vector3 diff = ufoPosition.transform.position - transform.position;
+        var diff = ufoPosition.transform.position - transform.position;
         diff.Normalize();
 
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        playerArm.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        var rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        playerArm.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ - 90);
     }
 /*
     IEnumerator vibrate(PlayerIndex index, float duration)

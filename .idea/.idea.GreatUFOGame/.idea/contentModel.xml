@@ -275,9 +275,12 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="BaseBullet.cs" t="Include" />
           <e p="BasePickUp.cs" t="Include" />
           <e p="BossAgent.cs" t="Include" />
+          <e p="BossBullet.cs" t="Include" />
           <e p="BossHealth.cs" t="Include" />
+          <e p="BulletType.cs" t="Include" />
           <e p="ColorShaderUpdater.cs" t="Include" />
           <e p="ColorTint.cs" t="Include" />
           <e p="Health.cs" t="Include" />
@@ -287,11 +290,16 @@
           <e p="OutlineShader.shader" t="Include" />
           <e p="PlayerAgent.cs" t="Include" />
           <e p="PlayerArmor.cs" t="Include" />
+          <e p="PlayerBullet.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerHealth.cs" t="Include" />
           <e p="PlayerService.cs" t="Include" />
-          <e p="Projectile.cs" t="Include" />
           <e p="ScreenShakeService.cs" t="Include" />
+          <e p="UfoAttackConfig.cs" t="Include" />
+          <e p="UfoBombThrowerConfig.cs" t="Include" />
+          <e p="UfoController.cs" t="Include" />
+          <e p="UfoLaserConfig.cs" t="Include" />
+          <e p="UfoMiniGunConfig.cs" t="Include" />
         </e>
       </e>
       <e p="Barracuda-editor.csproj" t="IncludeRecursive" />
