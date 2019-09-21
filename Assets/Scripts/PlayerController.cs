@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float projectileSpeed = 5;
     private float time = 0;
     private bool exit;
-    private int playerIndex = 0;
+    GamePadState state;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         if ((Input.GetAxisRaw("Fire1") == 1) && (time > shootDelay))
         {
+            StartCoroutine(vibrate(PlayerIndex.One, 0.05f));
             time = 0;
             var instantiatedProjectile = Instantiate(projectile, playerArmTip.transform.position, Quaternion.identity);
             var projectileScript = instantiatedProjectile.GetComponent<Projectile>();
@@ -61,5 +63,15 @@ public class PlayerController : MonoBehaviour
 
        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         playerArm.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+    }
+
+    IEnumerator vibrate(PlayerIndex index, float duration)
+    {
+        GamePad.SetVibration(index, 1f, 1f);
+        
+        yield return new WaitForSeconds(duration);
+        GamePad.SetVibration(index, 0f, 0f);
+
+        yield return null;
     }
 }
