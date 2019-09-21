@@ -177,6 +177,7 @@ MonoBehaviour:
     type: 3}
   playerArm: {fileID: 3749389906792304964}
   playerArmTip: {fileID: 3749389907014071465}
+  rigidbody2d: {fileID: 3749389906880100071}
   ufoPosition: {fileID: 0}
   loweredMovementSpeed: 2.5
   standardMovementSpeed: 5

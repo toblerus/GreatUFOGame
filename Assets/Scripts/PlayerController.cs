@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject playerArm;
     [SerializeField] private GameObject playerArmTip;
+    [SerializeField] private Rigidbody2D rigidbody2d;
     public Transform ufoPosition;
 
     [Header("Player")]
     private float movementSpeed = 0;
+    private Vector2 movePosition = new Vector2();
     [SerializeField] private float loweredMovementSpeed = 2.5f;
     [SerializeField] private float standardMovementSpeed = 5f;
     [SerializeField] private float shootDelay = 0.1f;
@@ -27,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
 
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if(isFiring == true)
+        if (isFiring == true)
         {
             movementSpeed = loweredMovementSpeed;
         }
@@ -52,7 +54,9 @@ public class PlayerController : MonoBehaviour
         float x = horizontalMovement * movementSpeed;
         x *= Time.deltaTime;
         y *= Time.deltaTime;
-        transform.Translate(x, y, 0);
+        movePosition.x = x;
+        movePosition.y = y;
+        rigidbody2d.MovePosition(rigidbody2d.position + movePosition);
     }
 
     private void Shoot()
