@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
             float x = Input.GetAxisRaw("Horizontal") * movementSpeed;
             x *= Time.deltaTime;
             y *= Time.deltaTime;
-            //x = Mathf.Clamp(x,  1, 10);
             transform.Translate(x, y, 0);
     }
 
