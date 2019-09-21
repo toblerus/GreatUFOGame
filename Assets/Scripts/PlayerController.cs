@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             time = 0;
             var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
-            spawnedBullet.MoveTowardsGoal(ufoPosition.position, projectileSpeed);
+            spawnedBullet.MoveTowards(ufoPosition.position - transform.position, projectileSpeed);
             spawnedBullet.name += name;
         }
         time += Time.deltaTime;
