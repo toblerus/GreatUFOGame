@@ -13,13 +13,9 @@ MonoBehaviour:
   m_Name: UfoMiniGunConfig
   m_EditorClassIdentifier: 
   _windUpDelay: 2
-  _attackDelay: 0.5
+  _attackDelay: 0.1
   _coolDownDelay: 2
-  _attackType: 1
-  _projectileSpeed: 10
+  _projectileSpeed: 3
+  _projectileCount: 5
   _bullets:
-  - {fileID: 2078637632043019374, guid: 623231148c471c94e979e95975dd3079, type: 3}
-  - {fileID: 2078637632043019374, guid: f2f51c76585896a4ba0938343bb3336b, type: 3}
-  - {fileID: 2078637632043019374, guid: 5f850ce8ba979b64eb8bac564f10b0cb, type: 3}
   - {fileID: 2078637632043019374, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
-  - {fileID: 2078637632043019374, guid: 48dc8702d0482dd4a85f1dcf8947c9d0, type: 3}

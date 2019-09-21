@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2078637632043019374}
   - component: {fileID: 583379406095412585}
   m_Layer: 0
-  m_Name: SprayBullet2
+  m_Name: MiniGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 8618021018823175106}
-  _localShotDirection: {x: 0.1, y: 1}
+  _maxSideWayOffset: 2
   _bulletType: 20
   _damage: 2
 --- !u!58 &583379406095412585

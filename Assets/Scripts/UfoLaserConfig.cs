@@ -6,14 +6,17 @@ public class UfoLaserConfig : UfoAttackConfig
 {
     [SerializeField] private float _laserLifeTime;
 
-    protected override IEnumerable InstantiateBullets(Transform ufo, Transform target, Health health)
+    protected override IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health)
     {
-        foreach (var bullet in Bullets)
+        for (var i = 0; i < ProjectileCount; i++)
         {
             if (health.IsDead)
                 yield break;
+            
+            var bulletPrefab = Bullets[Random.Range(0, Bullets.Count)];
 
-            var spawnedBullet = Instantiate(bullet, ufo.position, Quaternion.identity);
+            var spawnedBullet = Instantiate(bulletPrefab, ufo.position, Quaternion.identity);
+            spawnedBullet.MoveTowards(target.position - ufo.position, ProjectileSpeed);
             Destroy(spawnedBullet, _laserLifeTime);
 
             yield return new WaitForSeconds(AttackDelay);

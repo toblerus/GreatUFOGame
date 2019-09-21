@@ -9,15 +9,17 @@ public abstract class UfoAttackConfig : ScriptableObject
     [SerializeField] private float _coolDownDelay;
     [Space]
     [SerializeField] private float _projectileSpeed;
+    [SerializeField] private int _projectileCount;
     [SerializeField] private List<BaseBullet> _bullets;
 
     protected float AttackDelay => _attackDelay;
     protected float ProjectileSpeed => _projectileSpeed;
+    protected float ProjectileCount => _projectileCount;
 
     protected List<BaseBullet> Bullets => _bullets;
 
 
-    public IEnumerable CreateBullets(Transform ufo, Health health)
+    public IEnumerator CreateBullets(Transform ufo, Health health)
     {
         yield return new WaitForSeconds(_windUpDelay);
             
@@ -25,13 +27,13 @@ public abstract class UfoAttackConfig : ScriptableObject
             yield break;
 
         var selectedPlayer = PlayerService.Instance.ClosestPlayer(ufo.position);
-        yield return InstantiateBullets(ufo, selectedPlayer.transform, health);
+        yield return health.StartCoroutine(InstantiateBullets(ufo, selectedPlayer.transform, health));
         
         if (health.IsDead)
             yield break;
 
-        yield return _coolDownDelay;
+        yield return new WaitForSeconds(_coolDownDelay);
     }
 
-    protected abstract IEnumerable InstantiateBullets(Transform ufo, Transform target, Health health);
+    protected abstract IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health);
 }

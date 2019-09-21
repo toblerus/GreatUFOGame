@@ -4,7 +4,12 @@ using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
-    public int MaxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
+    public int MaxHealth
+    {
+        get => _maxHealth;
+        set => _maxHealth = value;
+    }
+
     [SerializeField] private int _maxHealth;
 
     public int CurrentHealth { get; set; }

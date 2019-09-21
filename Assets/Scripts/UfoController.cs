@@ -28,7 +28,8 @@ public class UfoController : MonoBehaviour
         {
             var selectedAttack = _attackMappings[Random.Range(0, _attackMappings.Count)];
 
-            yield return selectedAttack.Config.CreateBullets(selectedAttack.Anchor, _health);
+            yield return StartCoroutine(selectedAttack.Config.CreateBullets(selectedAttack.Anchor, _health));
+            Debug.LogWarning("Bullet creation for " + selectedAttack.Config.name + " completed");
         }
     }
 }

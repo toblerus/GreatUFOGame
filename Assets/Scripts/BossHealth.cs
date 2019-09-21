@@ -5,7 +5,7 @@ public class BossHealth : Health
 {
     [SerializeField] private int _damagePerSecond;
 
-    private void Awake()
+    private void Start()
     {
         StartCoroutine(DealContinuousDamage());
     }

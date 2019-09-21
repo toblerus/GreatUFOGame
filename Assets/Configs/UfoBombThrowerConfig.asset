@@ -15,8 +15,8 @@ MonoBehaviour:
   _windUpDelay: 1
   _attackDelay: 2
   _coolDownDelay: 3
-  _attackType: 3
-  _projectileSpeed: 5
+  _projectileSpeed: 1
+  _projectileCount: 2
   _bullets:
   - {fileID: 645137587057644469, guid: 7e65283f2a051dd4186471073d94edad, type: 3}
   _randomOffset: 3

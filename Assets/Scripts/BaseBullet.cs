@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class BaseBullet : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidBody;
-    [SerializeField] private Vector2 _localShotDirection;
+    [SerializeField] private float _maxSideWayOffset;
     [SerializeField] private BulletType _bulletType;
     [SerializeField] private int _damage;
 
@@ -13,16 +13,6 @@ public abstract class BaseBullet : MonoBehaviour
     public BulletType BulletType => _bulletType;
     protected int Damage => _damage;
 
-    public float Speed
-    {
-        set
-        {
-            var moveDirection = transform.TransformDirection(_localShotDirection);
-            _rigidBody.velocity = moveDirection * value;
-            RotateTo(moveDirection);
-        }
-    }
-
     public void MoveTowardsGoal(Vector2 goal, float speed)
     {
         StartCoroutine(Move(goal, speed));
@@ -30,6 +20,7 @@ public abstract class BaseBullet : MonoBehaviour
 
     public void MoveTowards(Vector2 direction, float speed)
     {
+        direction = direction + new Vector2(Random.Range(-_maxSideWayOffset, _maxSideWayOffset), 0);
         _rigidBody.velocity = direction.normalized * speed;
         RotateTo(direction);
     }
