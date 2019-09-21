@@ -174,8 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c785d8ae498faa8449153e61558c1b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 8618021018823175111, guid: 35c9921074ca9ff4884cba664988d16b,
-    type: 3}
+  bullet: {fileID: 2078637632043019374, guid: 35c9921074ca9ff4884cba664988d16b, type: 3}
   playerArm: {fileID: 3749389906792304964}
   playerArmTip: {fileID: 3749389907014071465}
   rigidbody2d: {fileID: 3749389906880100071}

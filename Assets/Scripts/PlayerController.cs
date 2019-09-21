@@ -6,7 +6,7 @@ using DG.Tweening;
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private BaseBullet bullet;
     [SerializeField] private GameObject playerArm;
     [SerializeField] private GameObject playerArmTip;
     [SerializeField] private Rigidbody2D rigidbody2d;
@@ -73,10 +73,9 @@ public class PlayerController : MonoBehaviour
         if (isFiring && (time > shootDelay))
         {
             time = 0;
-            var instantiatedProjectile = Instantiate(projectile, playerArmTip.transform.position, Quaternion.identity);
-            var projectileScript = instantiatedProjectile.GetComponent<Projectile>();
-            projectileScript.UFOPosition = ufoPosition;
-            projectileScript.projectileSpeed = projectileSpeed;
+            var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
+            spawnedBullet.MoveTowardsGoal(ufoPosition.position, projectileSpeed);
+            spawnedBullet.name += name;
         }
         time += Time.deltaTime;
     }

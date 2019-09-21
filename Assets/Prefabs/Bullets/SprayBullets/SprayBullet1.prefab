@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8618021018823175109}
   - component: {fileID: 8618021018823175108}
   - component: {fileID: 8618021018823175106}
-  - component: {fileID: 2861621513624705457}
-  - component: {fileID: 2539442522565712981}
+  - component: {fileID: 2078637632043019374}
+  - component: {fileID: 583379406095412585}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: MiniGunBullet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8618021018823175111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2861621513624705457
+--- !u!114 &2078637632043019374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,13 +113,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8618021018823175111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21633abe531790647b28995af2bff286, type: 3}
+  m_Script: {fileID: 11500000, guid: 335a60d0b05843698e384e383f348d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UFOPosition: {fileID: 0}
-  projectileSpeed: 0
---- !u!61 &2539442522565712981
-BoxCollider2D:
+  _rigidBody: {fileID: 8618021018823175106}
+  _localShotDirection: {x: 0, y: 1}
+  _bulletType: 20
+  _damage: 2
+--- !u!58 &583379406095412585
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -128,19 +130,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 0.2, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.033, y: 0.157}
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
+  m_Radius: 0.15
