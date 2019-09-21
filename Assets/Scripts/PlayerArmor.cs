@@ -20,12 +20,16 @@ public class PlayerArmor : MonoBehaviour
         return Math.Min(armorLeft, 0);
     }
 
-    public void HealArmor(int healing)
+    public int HealArmor(int healing)
     {
         if (healing < 0)
-            return;
+            return 0;
 
-        CurrentArmor = Math.Min(CurrentArmor + healing, _maxArmor);
+        var missingArmor = _maxArmor - CurrentArmor;
+        var overHeal = Math.Max(healing - missingArmor, 0);
+        CurrentArmor += healing - overHeal;
+
+        return overHeal;
     }
 
     private void Awake()
