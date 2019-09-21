@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
+    [SerializeField] private float movementSpeed;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        float y = Input.GetAxis("Vertical") * movementSpeed;
+        float x = Input.GetAxis("Horizontal") * movementSpeed;
+        x *= Time.deltaTime;
+        y *= Time.deltaTime;
+        transform.Translate(x, y, 0);
     }
 }
