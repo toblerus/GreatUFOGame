@@ -42,13 +42,18 @@ public class PlayerAgent : Agent
 
     }
 
-    public void OnTakingDamage()
+    public void OnTakingDamage(int damage)
     {
-        AddReward(-10);
+        AddReward(-damage);
     }
 
     public void OnDealingDamage()
     {
         AddReward(1);
+    }
+
+    public void OnDeath()
+    {
+        Done();
     }
 }
