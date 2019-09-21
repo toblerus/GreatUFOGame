@@ -9,7 +9,7 @@ public class PlayerAgent : Agent
     
     public override void InitializeAgent()
     {
-
+        Debug.Log("InitializeAgent()");
     }
 
     public override void CollectObservations()
@@ -26,14 +26,14 @@ public class PlayerAgent : Agent
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
-        _playerController.horizontalMovement = Mathf.Clamp(vectorAction[0], -1, 1);
-        _playerController.verticalMovement = Mathf.Clamp(vectorAction[1], -1, 1);
-        _playerController.isFiring = vectorAction[2] > 0;
+
     }
 
     public override void AgentAction(float[] vectorAction, string textAction, CustomAction customAction)
     {
-
+        _playerController.horizontalMovement = Mathf.Clamp(vectorAction[0], -1, 1);
+        _playerController.verticalMovement = Mathf.Clamp(vectorAction[1], -1, 1);
+        _playerController.isFiring = vectorAction[2] > 0;
     }
 
     public override void AgentOnDone()

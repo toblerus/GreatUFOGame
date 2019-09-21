@@ -350,7 +350,7 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 1
-  _playerController: {fileID: 0}
+  _playerController: {fileID: 3749389906880100070}
 --- !u!1 &3749389906938137277
 GameObject:
   m_ObjectHideFlags: 0
