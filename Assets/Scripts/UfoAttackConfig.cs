@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class UfoAttackConfig : ScriptableObject
 {
+    [SerializeField] private Sprite _turretSprite;
     [SerializeField] private float _windUpDelay;
     [SerializeField] private float _attackDelay;
     [SerializeField] private float _batchDelay;
@@ -56,5 +57,10 @@ public abstract class UfoAttackConfig : ScriptableObject
         instance.transform.RotateTo(direction);
 
         Destroy(instance, lifeTime);
+    }
+
+    public Sprite GetTurretSprite()
+    {
+        return _turretSprite;
     }
 }

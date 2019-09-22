@@ -1,22 +1,24 @@
-﻿using MLAgents;
+﻿using System.Linq;
+using MLAgents;
 using MLAgents.CommunicatorObjects;
 using UnityEngine;
 
 public abstract class PlayerAgent : Agent
 {
     [SerializeField] private PlayerController _playerController;
-    
+
+    private Vector3 _startingPosition;
+
     public override void InitializeAgent()
     {
         Debug.Log("InitializeAgent()");
+        _startingPosition = transform.localPosition;
     }
 
     public override void CollectObservations()
     {
         var self = _playerController;
-        var other = GetComponent<ManualPlayerControl>().PlayerIndex == 1
-            ? Container.Instance.Player2
-            : Container.Instance.Player1;
+        var other = FindObjectsOfType<PlayerController>().Single(player => player.gameObject != gameObject);
         
         AddVectorObs((Vector2) self.transform.localPosition);
         AddVectorObs((Vector2) other.transform.localPosition);
@@ -50,6 +52,8 @@ public abstract class PlayerAgent : Agent
         health.CurrentHealth = health.MaxHealth;
         health.IsDead = false;
         health.IsInvincible = false;
+
+        transform.localPosition = _startingPosition;
     }
 
     public void OnTakingDamage(int damage)

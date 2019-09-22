@@ -349,7 +349,7 @@ MonoBehaviour:
     maxStep: 0
     resetOnDone: 1
     onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 1
+    numberOfActionsBetweenDecisions: 5
   _playerController: {fileID: 4385273611043211745}
 --- !u!1 &4385273611064079802
 GameObject:

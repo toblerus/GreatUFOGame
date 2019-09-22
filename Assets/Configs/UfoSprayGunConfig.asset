@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9f7305387b4ae3b9e7218f828a126d, type: 3}
   m_Name: UfoSprayGunConfig
   m_EditorClassIdentifier: 
+  _turretSprite: {fileID: 21300000, guid: 8a6ac46f94d47794b8a6877bac69e02d, type: 3}
   _windUpDelay: 0.5
   _attackDelay: 0.1
   _batchDelay: 2
   _coolDownDelay: 2
-  _projectileSpeed: 0.25
+  _projectileSpeed: 1
   _projectileCount: 15
   _bulletBatchSize: 5
   _bullets:

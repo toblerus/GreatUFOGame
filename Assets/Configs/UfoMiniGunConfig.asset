@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9f7305387b4ae3b9e7218f828a126d, type: 3}
   m_Name: UfoMiniGunConfig
   m_EditorClassIdentifier: 
+  _turretSprite: {fileID: 21300000, guid: f6c127a962fa7c34caf3e0475f86c290, type: 3}
   _windUpDelay: 2
-  _attackDelay: 0
-  _batchDelay: 0.1
+  _attackDelay: 0.1
   _coolDownDelay: 2
   _projectileSpeed: 3
   _projectileCount: 5
-  _bulletBatchSize: 1
   _bullets:
   - {fileID: -3835194050501035488, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
   _chargeUpVfx: {fileID: 0}
-  _muzzleFlash: {fileID: 7276984478291554056, guid: b3c6447e0cebde7419ca11e798f62077,
-    type: 3}
-  _muzzleFlashDuration: 0.1
+  _muzzleFlash: {fileID: 0}
+  _muzzleFlashDuration: 0

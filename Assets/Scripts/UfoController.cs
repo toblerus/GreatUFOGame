@@ -12,15 +12,32 @@ public class UfoController : MonoBehaviour
         public UfoAttackConfig Config;
         public Transform Anchor;
     }
-    
+
+    [SerializeField] private TurretController _turretPrefab;
     [SerializeField] private Health _health;
     [SerializeField] private List<UfoAttackMapping> _attackMappings;
 
     public Health Health => _health;
     
-    private void Awake()
+    private void Start()
     {
+        CreateTurrets();
         StartCoroutine(StartShooting());
+    }
+
+    private void CreateTurrets()
+    {
+        foreach (var ufoAttackMapping in _attackMappings)
+        {
+            var anchor = ufoAttackMapping.Anchor;
+            var turretPrefab = Instantiate(_turretPrefab, anchor);
+            turretPrefab.transform.SetParent(anchor,true);
+            
+            var sprite = ufoAttackMapping.Config.GetTurretSprite();
+            turretPrefab.SetTurretSprite(sprite);
+
+            ufoAttackMapping.Anchor = turretPrefab.BulletSpawnPoint;
+        }
     }
 
     private IEnumerator StartShooting()
