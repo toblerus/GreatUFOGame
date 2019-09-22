@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float shootDelay = 0.1f;
     [SerializeField] private float projectileSpeed = 5;
     private Vector3 _spawnPosition;
+
+    public Vector3 SpawnPosition => _spawnPosition;
+
     private float time;
     private bool exit;
 

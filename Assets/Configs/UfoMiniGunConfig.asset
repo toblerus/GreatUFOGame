@@ -18,8 +18,8 @@ MonoBehaviour:
   _batchDelay: 0
   _coolDownDelay: 2
   _projectileSpeed: 3
-  _projectileCount: 5
-  _bulletBatchSize: 1
+  _projectileCount: 25
+  _bulletBatchSize: 3
   _bullets:
   - {fileID: -3835194050501035488, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
   _chargeUpVfx: {fileID: 0}
