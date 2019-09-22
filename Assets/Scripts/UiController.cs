@@ -16,7 +16,9 @@ public class UiController : MonoBehaviour
         _p1HealthText.text = "P1 HP: " + PlayerService.Instance.Players[0].PlayerHealth.CurrentHealth;
         _p2HealthText.text = "P2 HP: " + PlayerService.Instance.Players[1].PlayerHealth.CurrentHealth;
         _armorText.text = "Armor: " + PlayerArmor.Instance.CurrentArmor;
-        _ufoHealthText.text = "Ufo HP: " + UfoService.Instance.Ufo.Health.CurrentHealth;
+        _ufoHealthText.text = "Ufo HP: " + (UfoService.Instance.Ufo.Health.IsDead
+                                  ? UfoService.Instance.Ufo.Health.CurrentHealth
+                                  : UfoService.Instance.Alien.Health.CurrentHealth);
     }
 
     private void Update()
