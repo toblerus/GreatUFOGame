@@ -11,7 +11,7 @@ public class FirstStagePlayerAgent: PlayerAgent
             .ToList();
 
 
-        for (var i = 1; i <= 5; i++)
+        for (var i = 1; i <= 30; i++)
         {
             if (bullets.Count >= i)
             {

@@ -31,6 +31,11 @@ public class PlayerHealth : Health
         _playerAgent.OnTakingDamage(damage);
 
         if (IsDead)
-            _playerAgent.OnDeath();
+        {
+            foreach (var playerAgent in FindObjectsOfType<PlayerAgent>())
+            {
+                playerAgent.OnDeath();
+            }
+        }
     }
 }

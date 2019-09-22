@@ -53,14 +53,19 @@ public abstract class PlayerAgent : Agent
         health.CurrentHealth = health.MaxHealth;
         health.IsDead = false;
         health.IsInvincible = false;
-        health.SetInvincible(2f);
 
-        foreach (var bullet in FindObjectsOfType<PlayerBullet>().Where(bullet => bullet.name.Contains(name)))
+        foreach (var player in FindObjectsOfType<PlayerController>())
         {
-            bullet.DestroyBullet();
+            foreach (Transform child in player.BulletParent)
+            {
+                Destroy(child.gameObject);
+            }
         }
 
-        
+        foreach (Transform child in FindObjectOfType<UfoController>().BulletParent)
+        {
+            Destroy(child.gameObject);
+        }
 
         transform.localPosition = _startingPosition;
     }
