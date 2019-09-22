@@ -9,6 +9,10 @@ public class GameOverController : MonoBehaviour
     [SerializeField] private Button _resetButton;
     [SerializeField] private TextMeshProUGUI _winnerText;
 
+    [SerializeField] private Transform _highScoreUi;
+
+    public Transform HighScoreUi => _highScoreUi;
+    
     public TextMeshProUGUI WinnerText => _winnerText;
 
     // Start is called before the first frame update
