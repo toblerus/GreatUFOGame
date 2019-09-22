@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
-  _maxArmor: 1
+  _maxArmor: 100
 --- !u!4 &668175324
 Transform:
   m_ObjectHideFlags: 0
