@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour
 
     private bool _playersWon;
     public bool GameEnded = false;
-    
+    public float _timer;
+
     private void Awake()
     {
         if(Instance != null)
