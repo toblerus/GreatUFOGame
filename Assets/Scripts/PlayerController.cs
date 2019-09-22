@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float standardMovementSpeed = 5f;
     [SerializeField] private float shootDelay = 0.1f;
     [SerializeField] private float projectileSpeed = 5;
+    private Vector3 _spawnPosition;
     private float time;
     private bool exit;
 
@@ -31,17 +33,17 @@ public class PlayerController : MonoBehaviour
     [Header("Screen Shake")] 
     [SerializeField] private Vector3 _screenShakeStrength;
     [SerializeField] private float _shakeDuration = .2f;
-    
+
+    private void Start()
+    {
+        _spawnPosition = transform.position;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) 
-            && GetComponent<ManualPlayerControl>().PlayerIndex == 1)
-        {
-            healthscript.Damage(1, 0);
-        }
-
         if (healthscript.IsDead)
         {
+            OnDead();
             return;
         }
         
@@ -87,6 +89,18 @@ public class PlayerController : MonoBehaviour
         var rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         playerArm.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ - 90);
     }
+
+    private void OnDead()
+    {
+        transform.position = new Vector3(-100, 0, 0);
+    }
+
+    public void ResetPlayer()
+    {
+        transform.position = _spawnPosition;
+        healthscript.CurrentHealth = healthscript.MaxHealth;
+    }
+    
 /*
     IEnumerator vibrate(PlayerIndex index, float duration)
     {
