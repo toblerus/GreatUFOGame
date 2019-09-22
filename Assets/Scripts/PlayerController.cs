@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerArmTip;
     [SerializeField] private Rigidbody2D rigidbody2d;
     [SerializeField] private PlayerHealth healthscript;
+
+    public PlayerHealth PlayerHealth => healthscript;
+
     public Transform ufoPosition;
 
     [Header("Player")]
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 _screenShakeStrength;
     [SerializeField] private float _shakeDuration = .2f;
     
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) 
             && GetComponent<ManualPlayerControl>().PlayerIndex == 1)

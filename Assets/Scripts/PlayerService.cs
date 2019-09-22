@@ -6,6 +6,7 @@ public class PlayerService : MonoBehaviour
     public static PlayerService Instance { get; private set; }
 
     private PlayerController[] _players;
+    public PlayerController[] Players => _players;
 
     public PlayerController ClosestPlayer(Vector2 currentPosition)
     {

@@ -15,6 +15,8 @@ public class UfoController : MonoBehaviour
     
     [SerializeField] private Health _health;
     [SerializeField] private List<UfoAttackMapping> _attackMappings;
+
+    public Health Health => _health;
     
     private void Awake()
     {

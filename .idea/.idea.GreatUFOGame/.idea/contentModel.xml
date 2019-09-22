@@ -305,6 +305,7 @@
           <e p="UfoController.cs" t="Include" />
           <e p="UfoLaserConfig.cs" t="Include" />
           <e p="UfoMiniGunConfig.cs" t="Include" />
+          <e p="UfoService.cs" t="Include" />
           <e p="WarningBlinkAnimation.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
@@ -335,6 +336,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="UiController.cs" t="Include" />
       </e>
       <e p="Barracuda-editor.csproj" t="IncludeRecursive" />
       <e p="GreatUFOGame.sln" t="IncludeFlat" />
