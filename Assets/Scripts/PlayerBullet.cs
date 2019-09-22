@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Linq;
 
 public class PlayerBullet : BaseBullet
 {
@@ -20,8 +21,19 @@ public class PlayerBullet : BaseBullet
         if (bossHealth)
         {
             bossHealth.Damage(Damage, null);
+
+            if (!bossHealth.IsDead && !bossHealth.IsInvincible)
+                RewardAi();
         }
         
         DestroyBullet();
+    }
+
+    private void RewardAi()
+    {
+        var owner = FindObjectsOfType<FirstStagePlayerAgent>().Single(player => name.Contains(player.name));
+
+        if (owner.enabled)
+            owner.OnDealingDamage(Damage);
     }
 }

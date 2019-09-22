@@ -131,7 +131,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnSpawnBullet()
     {
-        ScreenShakeService.Instance.ShakeCamera(_shakeDuration, _screenShakeStrength);
         SfxAudioService.Instance.PlayOneShotForClip(SfxClip.PlayerProjectile);
     }
     

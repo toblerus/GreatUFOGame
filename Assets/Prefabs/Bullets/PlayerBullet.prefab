@@ -119,7 +119,7 @@ MonoBehaviour:
   _rigidBody: {fileID: 8618021018823175106}
   _localShotDirection: {x: 0, y: 0}
   _bulletType: 10
-  _damage: 10
+  _damage: 1
 --- !u!58 &583379406095412585
 CircleCollider2D:
   m_ObjectHideFlags: 0
