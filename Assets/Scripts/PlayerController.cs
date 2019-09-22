@@ -82,6 +82,17 @@ public class PlayerController : MonoBehaviour
             spawnedBullet.name += name;
             ScreenShakeService.Instance.ShakeCamera(_shakeDuration, _screenShakeStrength);
         }
+        /*
+        else
+        {
+            if(!isFiring)
+            {
+            time = shootDelay;
+            Debug.Log("called");
+
+            }
+        }
+        */
         time += Time.deltaTime;
     }
 
