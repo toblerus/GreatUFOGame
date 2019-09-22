@@ -28,6 +28,6 @@ public class PlayerService : MonoBehaviour
 
         Instance = this;
 
-        _players = new[] {Container.Instance.Player1, Container.Instance.Player2};
+        _players = FindObjectsOfType<PlayerController>();
     }
 }

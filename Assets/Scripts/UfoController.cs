@@ -42,6 +42,11 @@ public class UfoController : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     private IEnumerator StartShooting()
     {
         while (!_health.IsDead)
