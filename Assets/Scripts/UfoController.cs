@@ -31,6 +31,9 @@ public class UfoController : MonoBehaviour
 
     private void CreateTurrets()
     {
+        if (_turretPrefab == null)
+            return;
+
         foreach (var ufoAttackMapping in _attackMappings)
         {
             var anchor = ufoAttackMapping.Anchor;
