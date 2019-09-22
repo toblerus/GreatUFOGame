@@ -1,13 +1,18 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class OneTimeDamageDealer : MonoBehaviour
 {
     [SerializeField] private int _damage;
     [SerializeField] private float _invincibilityDuration;
 
     private readonly List<Health> _damagedEntities = new List<Health>();
-    
+
+    public void Clear()
+    {
+        _damagedEntities.Clear();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var health = other.GetComponent<Health>();
