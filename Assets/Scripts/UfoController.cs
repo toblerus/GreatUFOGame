@@ -20,12 +20,13 @@ public class UfoController : MonoBehaviour
     [SerializeField] private Health _health;
     [SerializeField] private List<UfoAttackMapping> _attackMappings;
 
+    private Coroutine _shooting;
+
     public Health Health => _health;
     
     private void Start()
     {
         CreateTurrets();
-        StartCoroutine(StartShooting());
     }
 
     private void CreateTurrets()
@@ -43,9 +44,14 @@ public class UfoController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        _shooting = StartCoroutine(StartShooting());
+    }
+
     private void OnDisable()
     {
-        StopAllCoroutines();
+        StopCoroutine(_shooting);
     }
 
     private IEnumerator StartShooting()

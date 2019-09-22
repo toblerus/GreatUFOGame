@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FirstStagePlayerBrain
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 154
+    vectorObservationSize: 7
     numStackedVectorObservations: 1
     vectorActionSize: 04000000
     cameraResolutions: []

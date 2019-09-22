@@ -10,7 +10,7 @@ public class FirstStagePlayerAgent: PlayerAgent
             .Select(child => child.GetComponent<BaseBullet>())
             .ToList();
         
-        for (var i = 1; i <= 30; i++)
+        for (var i = 1; i <= 1; i++)
         {
             if (bullets.Count >= i)
             {
