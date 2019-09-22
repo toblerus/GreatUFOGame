@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 using XInputDotNetPure;
 
@@ -81,7 +81,8 @@ public class PlayerController : MonoBehaviour
             var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
             spawnedBullet.MoveTowards(playerArm.transform.up, projectileSpeed);
             spawnedBullet.name += name;
-            ScreenShakeService.Instance.ShakeCamera(_shakeDuration, _screenShakeStrength);
+            
+            OnSpawnBullet();
         }
         /*
         else
@@ -127,6 +128,12 @@ public class PlayerController : MonoBehaviour
         healthscript.CurrentHealth = healthscript.MaxHealth;
     }
 
+    private void OnSpawnBullet()
+    {
+        ScreenShakeService.Instance.ShakeCamera(_shakeDuration, _screenShakeStrength);
+        SfxAudioService.Instance.PlayOneShotForClip(SfxClip.PlayerProjectile);
+    }
+    
     IEnumerator vibrate(int index, float duration)
     {
         GamePad.SetVibration(index == 1 ? PlayerIndex.One : PlayerIndex.Two, 1f, 1f);
