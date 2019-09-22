@@ -30,7 +30,7 @@ public abstract class UfoAttackConfig : ScriptableObject
     protected GameObject MuzzleFlash => _muzzleFlash;
     protected float MuzzleFlashDuration => _muzzleFlashDuration;
 
-    public IEnumerator CreateBullets(Transform ufo, Health health)
+    public IEnumerator CreateBullets(Transform ufo, Health health, Transform bulletParent)
     {
         if (_chargeUpVfx != null)
             CreateVfx(_chargeUpVfx, Vector2.up, ufo, _windUpDelay);
@@ -41,7 +41,7 @@ public abstract class UfoAttackConfig : ScriptableObject
             yield break;
 
         var selectedPlayer = PlayerService.Instance.ClosestPlayer(ufo.position);
-        yield return health.StartCoroutine(InstantiateBullets(ufo, selectedPlayer.transform, health));
+        yield return health.StartCoroutine(InstantiateBullets(ufo, selectedPlayer.transform, health, bulletParent));
         
         if (health.IsDead)
             yield break;
@@ -49,7 +49,7 @@ public abstract class UfoAttackConfig : ScriptableObject
         yield return new WaitForSeconds(_coolDownDelay);
     }
 
-    protected abstract IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health);
+    protected abstract IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health, Transform bulletParent);
 
     protected static void CreateVfx(GameObject prefab, Vector2 direction, Transform parent, float lifeTime)
     {
