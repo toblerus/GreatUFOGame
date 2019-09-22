@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _spawnPosition = transform.position;
+        
     }
 
     private void Update()
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
             var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
             spawnedBullet.MoveTowards(playerArm.transform.up, projectileSpeed);
             spawnedBullet.name += name;
-            
+            Input.GetJoystickNames();
             OnSpawnBullet();
         }
         /*
