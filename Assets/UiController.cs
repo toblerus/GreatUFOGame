@@ -22,7 +22,8 @@ public class UiController : MonoBehaviour
 
     private void Update()
     {
-        _timerText.text = _timer.ToString("0000");
+        TimeSpan timeSpan = TimeSpan.FromSeconds(_timer);
+        _timerText.text = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
         _timer += Time.deltaTime;
     }
 }

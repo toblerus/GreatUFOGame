@@ -1236,5 +1236,30 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 38.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6765717269368493671, guid: fec2673ea0a7bec4a9cd7bda166e3691,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765717269368493671, guid: fec2673ea0a7bec4a9cd7bda166e3691,
+        type: 3}
+      propertyPath: m_text
+      value: 00:00.000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765717269368493671, guid: fec2673ea0a7bec4a9cd7bda166e3691,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765717269368493671, guid: fec2673ea0a7bec4a9cd7bda166e3691,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765717269368493668, guid: fec2673ea0a7bec4a9cd7bda166e3691,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec2673ea0a7bec4a9cd7bda166e3691, type: 3}
