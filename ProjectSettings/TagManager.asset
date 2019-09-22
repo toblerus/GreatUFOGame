@@ -3,7 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - target
+  - wall
+  - block
+  - goal
+  - agent
+  - banana
+  - stone
+  - pyramid
+  - walkableSurface
+  - blueAgent
+  - blueGoal
+  - redGoal
+  - ball
+  - orangeGoal
+  - orangeBlock
+  - redBlock
+  - iWall
+  - switchOff
+  - badBanana
+  - pit
   layers:
   - Default
   - TransparentFX
@@ -13,7 +34,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Laser
   - 
   - 
   - 
