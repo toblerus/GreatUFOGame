@@ -12,11 +12,23 @@ public class MainMenuUI : MonoBehaviour
     private Sequence s;
     [SerializeField] private Button startButton;
     [SerializeField] private Button exitButton;
+    [SerializeField] private GameObject myEventSystem;
 
     void Start()
     {
         startButton.onClick.AddListener(() => StartCoroutine(SwitchToGameScene()));
         exitButton.onClick.AddListener(() => closeGame());
+
+        myEventSystem = GameObject.Find("EventSystem");
+        
+    }
+
+    private void Update()
+    {
+        if(myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().currentSelectedGameObject == null)
+        {
+            startButton.Select();
+        }
     }
 
 
