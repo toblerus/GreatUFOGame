@@ -13,8 +13,13 @@ public class UfoRegularAttackConfig : UfoAttackConfig
 
             var bulletPrefab = Bullets[Random.Range(0, Bullets.Count)];
 
+            var direction = target.position - ufo.position;
+
             var spawnedBullet = Instantiate(bulletPrefab, ufo.position, Quaternion.identity);
-            spawnedBullet.MoveTowards(target.position - ufo.position, ProjectileSpeed);
+            spawnedBullet.MoveTowards(direction, ProjectileSpeed);
+
+            if (MuzzleFlash != null)
+                CreateVfx(MuzzleFlash, direction, ufo, MuzzleFlashDuration);
 
             yield return new WaitForSeconds(AttackDelay);
         }

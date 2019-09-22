@@ -22,7 +22,7 @@ public abstract class BaseBullet : MonoBehaviour
     {
         direction = direction + new Vector2(Random.Range(-_maxSideWayOffset, _maxSideWayOffset), 0);
         _rigidBody.velocity = direction.normalized * speed;
-        RotateTo(direction);
+        transform.RotateTo(direction);
     }
 
     public abstract void DestroyBullet();
@@ -35,7 +35,7 @@ public abstract class BaseBullet : MonoBehaviour
     private IEnumerator Move(Vector3 goal, float speed)
     {
         var direction = (goal - transform.position).normalized;
-        RotateTo(direction);
+        transform.RotateTo(direction);
 
         while (Vector2.Distance(goal, transform.position) > 0.1f && !HasCollided)
         {
@@ -45,14 +45,7 @@ public abstract class BaseBullet : MonoBehaviour
 
         OnArrivedOnTarget();
     }
-
-    private void RotateTo(Vector2 direction)
-    {
-        direction = direction.normalized;
-        var rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotation - 90);
-    }
-
+    
     private void OnBecameInvisible()
     {
         DestroyBullet();
