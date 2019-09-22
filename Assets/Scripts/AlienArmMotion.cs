@@ -25,11 +25,13 @@ public class AlienArmMotion : MonoBehaviour
         }
         
         var direction = (targetPosition - _tileableObject.position).normalized;
-        var speed = Vector2.Distance(targetPosition, _tileableObject.position) / animationDuration;
+        var distance = Vector2.Distance(targetPosition, _tileableObject.position);
+        var speed = distance / animationDuration;
         
-        while (Vector2.Distance(_tileableObject.position, targetPosition) > 0.1)
+        while (distance > 0.1)
         {
             var movement = direction * speed * Time.deltaTime;
+            distance -= movement.magnitude;
             
             _spikeObject.position += 2.0f * movement;
             _tileableObject.position += movement;
