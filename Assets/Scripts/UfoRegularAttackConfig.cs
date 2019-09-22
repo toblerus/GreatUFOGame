@@ -6,22 +6,27 @@ public class UfoRegularAttackConfig : UfoAttackConfig
 {
     protected override IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health)
     {
-        for (var i = 0; i < ProjectileCount; i++)
+        var spawnedBullets = 0;
+        while (spawnedBullets < ProjectileCount)
         {
             if (health.IsDead)
                 yield break;
-
-            var bulletPrefab = Bullets[Random.Range(0, Bullets.Count)];
-
+            
             var direction = target.position - ufo.position;
+            for (var i = 0; i < BulletBatchSize; i++)
+            {
+                var bulletPrefab = Bullets[Random.Range(0, Bullets.Count)];
+                var spawnedBullet = Instantiate(bulletPrefab, ufo.position, Quaternion.identity);
+                spawnedBullet.MoveTowards(direction, ProjectileSpeed);
 
-            var spawnedBullet = Instantiate(bulletPrefab, ufo.position, Quaternion.identity);
-            spawnedBullet.MoveTowards(direction, ProjectileSpeed);
+                if (MuzzleFlash != null)
+                    CreateVfx(MuzzleFlash, direction, ufo, MuzzleFlashDuration);
 
-            if (MuzzleFlash != null)
-                CreateVfx(MuzzleFlash, direction, ufo, MuzzleFlashDuration);
+                yield return new WaitForSeconds(AttackDelay);
+                spawnedBullets++;
+            }
 
-            yield return new WaitForSeconds(AttackDelay);
+            yield return new WaitForSeconds(BatchDelay);
         }
     }
 }

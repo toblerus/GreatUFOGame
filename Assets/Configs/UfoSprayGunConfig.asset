@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: UfoSprayGunConfig
   m_EditorClassIdentifier: 
   _windUpDelay: 0.5
-  _attackDelay: 0.25
+  _attackDelay: 0.1
+  _batchDelay: 2
   _coolDownDelay: 2
   _projectileSpeed: 0.25
   _projectileCount: 15
+  _bulletBatchSize: 5
   _bullets:
   - {fileID: -6477015756842047207, guid: d0ebc70beb656424d8d950de36bdabea, type: 3}
+  _chargeUpVfx: {fileID: 0}
+  _muzzleFlash: {fileID: 0}
+  _muzzleFlashDuration: 0

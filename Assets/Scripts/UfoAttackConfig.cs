@@ -6,10 +6,12 @@ public abstract class UfoAttackConfig : ScriptableObject
 {
     [SerializeField] private float _windUpDelay;
     [SerializeField] private float _attackDelay;
+    [SerializeField] private float _batchDelay;
     [SerializeField] private float _coolDownDelay;
     [Space]
     [SerializeField] private float _projectileSpeed;
     [SerializeField] private int _projectileCount;
+    [SerializeField] private int _bulletBatchSize;
     [SerializeField] private List<BaseBullet> _bullets;
     [Space]
     [SerializeField] private GameObject _chargeUpVfx;
@@ -17,8 +19,10 @@ public abstract class UfoAttackConfig : ScriptableObject
     [SerializeField] private float _muzzleFlashDuration;
 
     protected float AttackDelay => _attackDelay;
+    protected float BatchDelay => _batchDelay;
     protected float ProjectileSpeed => _projectileSpeed;
-    protected float ProjectileCount => _projectileCount;
+    protected int ProjectileCount => _projectileCount;
+    protected int BulletBatchSize => _bulletBatchSize;
 
     protected List<BaseBullet> Bullets => _bullets;
 

@@ -35,13 +35,15 @@ public abstract class BaseBullet : MonoBehaviour
     private IEnumerator Move(Vector3 goal, float speed)
     {
         var direction = (goal - transform.position).normalized;
+        _rigidBody.velocity = direction * speed;
         transform.RotateTo(direction);
 
         while (Vector2.Distance(goal, transform.position) > 0.1f && !HasCollided)
         {
-            transform.position += direction * Time.deltaTime * speed;
             yield return null;
         }
+
+        _rigidBody.velocity = Vector2.zero;
 
         OnArrivedOnTarget();
     }

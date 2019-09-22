@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: UfoBombThrowerConfig
   m_EditorClassIdentifier: 
   _windUpDelay: 1
-  _attackDelay: 2
+  _attackDelay: 0
+  _batchDelay: 2
   _coolDownDelay: 3
   _projectileSpeed: 1
   _projectileCount: 2
+  _bulletBatchSize: 1
   _bullets:
   - {fileID: 645137587057644469, guid: 7e65283f2a051dd4186471073d94edad, type: 3}
+  _chargeUpVfx: {fileID: 0}
+  _muzzleFlash: {fileID: 0}
+  _muzzleFlashDuration: 0
   _randomOffset: 3
