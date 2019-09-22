@@ -63,7 +63,7 @@ public abstract class PlayerAgent : Agent
 
     public void OnDealingDamage(int damage)
     {
-        AddReward(damage);
+        AddReward(10 * damage);
     }
 
     public void OnDeath()
