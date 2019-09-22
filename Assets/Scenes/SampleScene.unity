@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59ad9d52c834ce599326e30928ac7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxArmor: 1
+  _maxArmor: 880
 --- !u!4 &668175324
 Transform:
   m_ObjectHideFlags: 0

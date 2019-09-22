@@ -15,5 +15,6 @@ public class ManualPlayerControl : MonoBehaviour
         playerController.isFiring = Input.GetAxis(playerIndex == 1 ? "Fire1" : "Fire2") == 1;
         playerController.horizontalMovement = Input.GetAxisRaw(playerIndex == 1 ? "Horizontal1" : "Horizontal2");
         playerController.verticalMovement = Input.GetAxisRaw(playerIndex == 1 ? "Vertical1" : "Vertical2");
+        playerController.rsHorizontalMovement = Input.GetAxis(playerIndex == 1 ? "RSHorizontal1" : "RSHorizontal2");
     }
 }

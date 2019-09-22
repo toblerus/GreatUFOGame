@@ -31,9 +31,10 @@ public class PlayerController : MonoBehaviour
     [Header("Controls")]
     public float horizontalMovement;
     public float verticalMovement;
+    public float rsHorizontalMovement;
     public bool isFiring;
 
-    [Header("Screen Shake")] 
+    [Header("Screen Shake")]
     [SerializeField] private Vector3 _screenShakeStrength;
     [SerializeField] private float _shakeDuration = .2f;
 
@@ -49,23 +50,23 @@ public class PlayerController : MonoBehaviour
             OnDead();
             return;
         }
-        
+
         Move();
         Shoot();
-        RotateTowardsUfo();
+        Aim();
     }
 
     private void Move()
     {
-        movementSpeed = isFiring 
-            ? loweredMovementSpeed 
+        movementSpeed = isFiring
+            ? loweredMovementSpeed
             : standardMovementSpeed;
-        
+
         var y = verticalMovement * movementSpeed;
         var x = horizontalMovement * movementSpeed;
         x *= Time.deltaTime;
         y *= Time.deltaTime;
-        
+
         movePosition.x = x;
         movePosition.y = y;
         rigidbody2d.MovePosition(rigidbody2d.position + movePosition);
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(vibrate(manualPlayerController.PlayerIndex, 0.1f));
             time = 0;
             var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
-            spawnedBullet.MoveTowards(ufoPosition.position - transform.position, projectileSpeed);
+            spawnedBullet.MoveTowards(playerArm.transform.up, projectileSpeed);
             spawnedBullet.name += name;
             ScreenShakeService.Instance.ShakeCamera(_shakeDuration, _screenShakeStrength);
         }
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
         */
         time += Time.deltaTime;
     }
-
+    /*
     private void RotateTowardsUfo()
     {
         var diff = ufoPosition.transform.position - transform.position;
@@ -103,6 +104,16 @@ public class PlayerController : MonoBehaviour
 
         var rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         playerArm.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ - 90);
+    }
+    */
+
+    private void Aim()
+    {
+        playerArm.transform.eulerAngles = new Vector3(
+        playerArm.transform.eulerAngles.x,
+        playerArm.transform.eulerAngles.y,
+        -rsHorizontalMovement*45
+        );
     }
 
     private void OnDead()
@@ -115,7 +126,7 @@ public class PlayerController : MonoBehaviour
         transform.position = _spawnPosition;
         healthscript.CurrentHealth = healthscript.MaxHealth;
     }
-    
+
     IEnumerator vibrate(int index, float duration)
     {
         GamePad.SetVibration(index == 1 ? PlayerIndex.One : PlayerIndex.Two, 1f, 1f);
