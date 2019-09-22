@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _alienArm: {fileID: 2012754447924104746}
-  _damageDealer: {fileID: 0}
+  _damageDealer: {fileID: 3018554542162790642}
   _windUpDelay: 1
   _stayDuration: 1
   _animationDuration: 4
@@ -319,10 +319,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

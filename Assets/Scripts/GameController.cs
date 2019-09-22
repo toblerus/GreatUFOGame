@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
         var player2Hp = PlayerService.Instance.Players[1].PlayerHealth.CurrentHealth;
 
         var ufoHp = UfoService.Instance.Ufo.Health.CurrentHealth;
+        var alienHp = UfoService.Instance.Alien.Health.CurrentHealth;
 
         if (player1Hp <= 0 && player2Hp <= 0)
         {
@@ -49,6 +50,12 @@ public class GameController : MonoBehaviour
         }
 
         if (ufoHp <= 0)
+        {
+            UfoService.Instance.Ufo.gameObject.SetActive(false);
+            UfoService.Instance.Alien.gameObject.SetActive(true);
+        }
+
+        if (alienHp <= 0)
         {
             StartCoroutine(SetGameOver(true));
         }
