@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: -862195822760800830}
   - component: {fileID: 7631276809453458240}
   - component: {fileID: 3411804657259995438}
+  - component: {fileID: 8353449528698212797}
+  - component: {fileID: 7746611306761438288}
   m_Layer: 0
   m_Name: prefab_alien
   m_TagString: Untagged
@@ -144,6 +146,43 @@ MonoBehaviour:
   _horizontalDistance: 1
   _verticalSpeed: 1
   _verticalDistance: 0.1
+--- !u!58 &8353449528698212797
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6179314461357358360}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.019940376, y: 1.7048469}
+  serializedVersion: 2
+  m_Radius: 2.6634665
+--- !u!50 &7746611306761438288
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6179314461357358360}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6198897294616865768
 GameObject:
   m_ObjectHideFlags: 0
