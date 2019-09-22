@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
@@ -17,5 +18,15 @@ public class TurretController : MonoBehaviour
     private void TargetPlayer()
     {
         var selectedPlayer = PlayerService.Instance.ClosestPlayer(Ufo.position);
+        var diff = selectedPlayer.transform.position - transform.position;
+        diff.Normalize();
+
+        var rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + 90);
+    }
+
+    private void Update()
+    {
+        TargetPlayer();
     }
 }
