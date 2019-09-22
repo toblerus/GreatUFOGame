@@ -264,9 +264,8 @@ MonoBehaviour:
   playerArmTip: {fileID: 4385273611177937838}
   rigidbody2d: {fileID: 4385273611043211744}
   healthscript: {fileID: 2098471954}
-  manualPlayerController: {fileID: 0}
-  BulletParent: {fileID: 573828486057714094}
   manualPlayerController: {fileID: -3137212152195378389}
+  BulletParent: {fileID: 573828486057714094}
   ufoPosition: {fileID: 0}
   loweredMovementSpeed: 2.5
   standardMovementSpeed: 5
@@ -581,6 +580,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7256846400009486405}
     m_Modifications:
+    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
+        type: 3}
+      propertyPath: m_Name
+      value: ps_fire (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 9050917621455543043, guid: 997b376fe40f0534e83d79e417173718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -636,11 +640,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
-    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
-        type: 3}
-      propertyPath: m_Name
-      value: ps_fire (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997b376fe40f0534e83d79e417173718, type: 3}
 --- !u!4 &8451089103217530874 stripped
@@ -656,6 +655,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7256846400009486405}
     m_Modifications:
+    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
+        type: 3}
+      propertyPath: m_Name
+      value: ps_fire (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 9050917621455543043, guid: 997b376fe40f0534e83d79e417173718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -710,11 +714,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
-        type: 3}
-      propertyPath: m_Name
-      value: ps_fire (3)
       objectReference: {fileID: 0}
     - target: {fileID: 9044516379689351233, guid: 997b376fe40f0534e83d79e417173718,
         type: 3}

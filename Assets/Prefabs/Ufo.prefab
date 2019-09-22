@@ -362,7 +362,6 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476477003913301544
---- !u!1 &2916065095333469330
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,15 +378,6 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1533565148275289573
-  - component: {fileID: 6733859030708926637}
-  m_Layer: 0
-  m_Name: laser_spawn_point
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6733859030708926637
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,13 +390,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4344449530865935576}
   m_RootOrder: 5
-  m_GameObject: {fileID: 2916065095333469330}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.79, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3792875674429924958}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4344449530865935559
 GameObject:
@@ -418,8 +401,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4344449530865935576}
   - component: {fileID: 6030552897040263788}
-  - component: {fileID: 4474522985547974266}
-  - component: {fileID: 7602820003687557655}
   - component: {fileID: 2707686786677257231}
   - component: {fileID: 483435664}
   - component: {fileID: 4343788607855000211}
@@ -462,70 +443,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f56d4fc6181489389d5cf58538b275d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletParent: {fileID: 1533565148275289573}
   _initialShootingDelay: 0
+  BulletParent: {fileID: 1533565148275289573}
   _turretPrefab: {fileID: 5658724922136668320, guid: e79a6c779e980444e881b5f8bc86f034,
     type: 3}
   _health: {fileID: 2707686786677257231}
   _attackMappings:
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 730893240}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 739307221}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 514708975}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 571068629}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 595332451}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 1719762117}
---- !u!114 &4474522985547974266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344449530865935559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f56d4fc6181489389d5cf58538b275d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _initialShootingDelay: 0.5
-  _turretPrefab: {fileID: 5658724922136668320, guid: e79a6c779e980444e881b5f8bc86f034,
-    type: 3}
-  _health: {fileID: 2707686786677257231}
-  _attackMappings:
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 2017088179}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 1920617347}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 5075492}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 1463668755}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 1603173085}
---- !u!114 &7602820003687557655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344449530865935559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f56d4fc6181489389d5cf58538b275d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _initialShootingDelay: 5
-  _turretPrefab: {fileID: 5658724922136668320, guid: e79a6c779e980444e881b5f8bc86f034,
-    type: 3}
-  _health: {fileID: 2707686786677257231}
-  _attackMappings:
-  - Config: {fileID: 11400000, guid: e3a4c1ae1c8682b4c82870a574b3fab9, type: 2}
-    Anchor: {fileID: 6733859030708926637}
 --- !u!114 &2707686786677257231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,11 +484,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderers:
+  - {fileID: 7058401700597894118}
   - {fileID: 4344449531317930788}
   - {fileID: 7050195102149917911}
-  - {fileID: 7058401700597894118}
   _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
   _maxHealth: 1200000
+  _colorShader: {fileID: 0}
   _damagePerSecond: 1
 --- !u!114 &483435664
 MonoBehaviour:
@@ -818,7 +764,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3792875674429924958}
   - component: {fileID: 7058401700597894118}
-  - component: {fileID: 8988475746359021710}
   m_Layer: 0
   m_Name: CannonSprite
   m_TagString: Untagged
@@ -836,8 +781,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.047, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6733859030708926637}
+  m_Children: []
   m_Father: {fileID: 4823271264495075751}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -890,15 +834,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8988475746359021710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5401801168905996411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9621d0d1ee76cfc4e8dc38e45ceac4dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

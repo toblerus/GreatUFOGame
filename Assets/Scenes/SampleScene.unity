@@ -326,7 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59ad9d52c834ce599326e30928ac7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxArmor: 1
+  _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
+  _maxArmor: 100
 --- !u!4 &668175324
 Transform:
   m_ObjectHideFlags: 0
@@ -341,12 +342,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &740790025 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4344449531317930788, guid: 41354f2976cdd314d99a9b0283eccd32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4344449530653098056}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &899198347
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,12 +626,6 @@ Transform:
   m_Father: {fileID: 161365897}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1432104390 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7050195102149917911, guid: 41354f2976cdd314d99a9b0283eccd32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4344449530653098056}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597249862
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,12 +977,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbef9232a6c483845ba3ca2a247d7b60, type: 3}
---- !u!212 &1786779189 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7058401700597894118, guid: 41354f2976cdd314d99a9b0283eccd32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4344449530653098056}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1929082893 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6841097245212343812, guid: ee6951ebb5fbc3146b1e8a84a137660d,
@@ -1266,6 +1249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 4385273611043211745, guid: ee6951ebb5fbc3146b1e8a84a137660d,
+        type: 3}
+      propertyPath: ufoPosition
+      value: 
+      objectReference: {fileID: 979913384}
     - target: {fileID: 4385273611043211746, guid: ee6951ebb5fbc3146b1e8a84a137660d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1321,16 +1309,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4385273611043211745, guid: ee6951ebb5fbc3146b1e8a84a137660d,
-        type: 3}
-      propertyPath: ufoPosition
-      value: 
-      objectReference: {fileID: 979913384}
-    - target: {fileID: 4385273611043211745, guid: ee6951ebb5fbc3146b1e8a84a137660d,
-        type: 3}
-      propertyPath: manualPlayerController
-      value: 
-      objectReference: {fileID: 1697762631}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee6951ebb5fbc3146b1e8a84a137660d, type: 3}
 --- !u!1001 &3061964411732543454
@@ -1409,11 +1387,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 161365897}
     m_Modifications:
-    - target: {fileID: 3749389906880100057, guid: 570e5ba73a7840744a7f2694b391ae88,
+    - target: {fileID: 3749389906880100070, guid: 570e5ba73a7840744a7f2694b391ae88,
         type: 3}
-      propertyPath: m_Name
-      value: Player1
-      objectReference: {fileID: 0}
+      propertyPath: ufoPosition
+      value: 
+      objectReference: {fileID: 979913384}
     - target: {fileID: 3749389906880100069, guid: 570e5ba73a7840744a7f2694b391ae88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1469,16 +1447,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3749389906880100070, guid: 570e5ba73a7840744a7f2694b391ae88,
+    - target: {fileID: 3749389906880100057, guid: 570e5ba73a7840744a7f2694b391ae88,
         type: 3}
-      propertyPath: ufoPosition
-      value: 
-      objectReference: {fileID: 979913384}
-    - target: {fileID: 3749389906880100070, guid: 570e5ba73a7840744a7f2694b391ae88,
-        type: 3}
-      propertyPath: manualPlayerController
-      value: 
-      objectReference: {fileID: 1988103555}
+      propertyPath: m_Name
+      value: Player1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570e5ba73a7840744a7f2694b391ae88, type: 3}
 --- !u!1001 &4344449530653098056
@@ -1488,11 +1461,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 161365897}
     m_Modifications:
-    - target: {fileID: 4344449530865935559, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: m_Name
-      value: Ufo
-      objectReference: {fileID: 0}
     - target: {fileID: 4344449530865935576, guid: 41354f2976cdd314d99a9b0283eccd32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1548,51 +1516,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
+    - target: {fileID: 4344449530865935559, guid: 41354f2976cdd314d99a9b0283eccd32,
         type: 3}
-      propertyPath: ufoTextures.Array.size
-      value: 3
+      propertyPath: m_Name
+      value: Ufo
       objectReference: {fileID: 0}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: flashColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: flashColor.g
-      value: 0.4117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: flashColor.b
-      value: 0.4117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: flashColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: ufoTexture
-      value: 
-      objectReference: {fileID: 740790025}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: ufoTextures.Array.data[0]
-      value: 
-      objectReference: {fileID: 740790025}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: ufoTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 1432104390}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: ufoTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 1786779189}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41354f2976cdd314d99a9b0283eccd32, type: 3}
 --- !u!1001 &5324618811872178666
