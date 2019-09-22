@@ -11,9 +11,9 @@ public class Container : MonoBehaviour
     public PlayerAgent Player1Agent => _player1Agent;
     
     public PlayerController Player2 => _player2;
-    public PlayerHealth Player2Health => _player1Health;
-    public ManualPlayerControl Player2ManualControls => _player1ManualControls;
-    public PlayerAgent Player2Agent => _player1Agent;
+    public PlayerHealth Player2Health => _player2Health;
+    public ManualPlayerControl Player2ManualControls => _player2ManualControls;
+    public PlayerAgent Player2Agent => _player2Agent;
 
     public UfoController Ufo => _ufo;
     public BossHealth UfoHealth => _ufoHealth;
