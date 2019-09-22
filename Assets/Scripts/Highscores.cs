@@ -23,7 +23,7 @@ public class Highscores : MonoBehaviour
         instance.StartCoroutine(instance.UploadNewHighscore(username, score));
     }
 
-    IEnumerator UploadNewHighscore(string username, int score)
+    public IEnumerator UploadNewHighscore(string username, int score)
     {
         WWW www = new WWW(webURL + privateCode + "/add/" + WWW.EscapeURL(username) + "/" + score);
         yield return www;

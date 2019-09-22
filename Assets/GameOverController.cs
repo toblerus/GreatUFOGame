@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameOverController : MonoBehaviour
 {
-    [SerializeField] private Button _resetButton;
     [SerializeField] private TextMeshProUGUI _winnerText;
 
     [SerializeField] private Transform _highScoreUi;
@@ -15,18 +14,21 @@ public class GameOverController : MonoBehaviour
     
     public TextMeshProUGUI WinnerText => _winnerText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        _resetButton.onClick.AddListener(() 
-            => StartCoroutine(RestartGame()));   
-    }
+
 
     private IEnumerator RestartGame()
     {
-        _resetButton.interactable = false;
         yield return new WaitForSeconds(.5f);
         GameController.Instance.GameEnded = false;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
+    }
+
+    private void Update()
+    {
+        var inputHorizontal = Input.GetButton("AButton");
+        if (inputHorizontal)
+        {
+            StartCoroutine(RestartGame());
+        }
     }
 }

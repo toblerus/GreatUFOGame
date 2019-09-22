@@ -1249,11 +1249,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
-    - target: {fileID: 4385273611043211745, guid: ee6951ebb5fbc3146b1e8a84a137660d,
-        type: 3}
-      propertyPath: ufoPosition
-      value: 
-      objectReference: {fileID: 979913384}
     - target: {fileID: 4385273611043211746, guid: ee6951ebb5fbc3146b1e8a84a137660d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1309,6 +1304,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4385273611043211745, guid: ee6951ebb5fbc3146b1e8a84a137660d,
+        type: 3}
+      propertyPath: ufoPosition
+      value: 
+      objectReference: {fileID: 979913384}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee6951ebb5fbc3146b1e8a84a137660d, type: 3}
 --- !u!1001 &3061964411732543454
@@ -1387,11 +1387,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 161365897}
     m_Modifications:
-    - target: {fileID: 3749389906880100070, guid: 570e5ba73a7840744a7f2694b391ae88,
+    - target: {fileID: 3749389906880100057, guid: 570e5ba73a7840744a7f2694b391ae88,
         type: 3}
-      propertyPath: ufoPosition
-      value: 
-      objectReference: {fileID: 979913384}
+      propertyPath: m_Name
+      value: Player1
+      objectReference: {fileID: 0}
     - target: {fileID: 3749389906880100069, guid: 570e5ba73a7840744a7f2694b391ae88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1447,11 +1447,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3749389906880100057, guid: 570e5ba73a7840744a7f2694b391ae88,
+    - target: {fileID: 3749389906880100070, guid: 570e5ba73a7840744a7f2694b391ae88,
         type: 3}
-      propertyPath: m_Name
-      value: Player1
-      objectReference: {fileID: 0}
+      propertyPath: ufoPosition
+      value: 
+      objectReference: {fileID: 979913384}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570e5ba73a7840744a7f2694b391ae88, type: 3}
 --- !u!1001 &4344449530653098056
@@ -1461,6 +1461,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 161365897}
     m_Modifications:
+    - target: {fileID: 4344449530865935559, guid: 41354f2976cdd314d99a9b0283eccd32,
+        type: 3}
+      propertyPath: m_Name
+      value: Ufo
+      objectReference: {fileID: 0}
     - target: {fileID: 4344449530865935576, guid: 41354f2976cdd314d99a9b0283eccd32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1516,10 +1521,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4344449530865935559, guid: 41354f2976cdd314d99a9b0283eccd32,
+    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
         type: 3}
-      propertyPath: m_Name
-      value: Ufo
+      propertyPath: _maxHealth
+      value: 1200000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41354f2976cdd314d99a9b0283eccd32, type: 3}

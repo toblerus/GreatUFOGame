@@ -16,6 +16,9 @@ public class HighscoreUI : MonoBehaviour
     [SerializeField] private float switchDelay = 0.1f;
 
     [SerializeField] private GameObject arrow;
+
+    [SerializeField] private Highscores highscores;
+
     private float time;
 
     // Start is called before the first frame update
@@ -42,7 +45,7 @@ public class HighscoreUI : MonoBehaviour
                     selectedLetter = alphabet.Length - 1;
                 }
                 time = 0;
-                
+
             }
 
             var inputVertical = Input.GetAxis("Horizontal1");
@@ -62,6 +65,7 @@ public class HighscoreUI : MonoBehaviour
         }
         time += Time.deltaTime;
         updateUI(selectedBox);
+        submit();
     }
 
     void updateUI(int index)
@@ -70,5 +74,13 @@ public class HighscoreUI : MonoBehaviour
         arrow.transform.position = letterBoxes[index].transform.position;
     }
 
+    void submit()
+    {
+        var inputHorizontal = Input.GetButton("YButton");
+        if (inputHorizontal)
+        {
+            StartCoroutine(highscores.UploadNewHighscore(letterBoxes[0].text+ letterBoxes[1].text + letterBoxes[2].text, (int)GameController.Instance._timer));
+        }
+    }
 
 }

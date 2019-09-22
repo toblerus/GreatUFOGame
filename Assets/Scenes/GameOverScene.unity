@@ -3379,8 +3379,7 @@ MonoBehaviour:
   selectedBox: 0
   switchDelay: 0.2
   arrow: {fileID: 707023968}
-  highscores: {fileID: 0}
-  gameController: {fileID: 0}
+  highscores: {fileID: 1107489882}
 --- !u!1 &2009816161
 GameObject:
   m_ObjectHideFlags: 0
