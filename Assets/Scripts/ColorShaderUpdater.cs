@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class ColorShaderUpdater : MonoBehaviour
 {
     [SerializeField] private Renderer _renderer;
@@ -39,7 +38,7 @@ public class ColorShaderUpdater : MonoBehaviour
 
             // Assign new propBlock values based on tint.
             _propBlock.SetColor("_Color", GetBodyColor);
-            _propBlock.SetFloat("_OutlineActive", _initialTint == ColorTint.OutlineAndBody ? 1 : 0);
+            _propBlock.SetFloat("_OutlineActive", _initialTint == ColorTint.OutlineAndBody || _initialTint == ColorTint.OutlineOnly ? 1 : 0);
         }
     }
 
@@ -51,14 +50,6 @@ public class ColorShaderUpdater : MonoBehaviour
 
         Tint = _initialTint;
         SetPropertyBlock();
-    }
-
-    private void OnValidate()
-    {
-        if (_renderer == null)
-        {
-            _renderer = GetComponent<Renderer>();
-        }
     }
 
     private void Update()
@@ -84,6 +75,14 @@ public class ColorShaderUpdater : MonoBehaviour
                 default:
                     return Color.white;
             }
+        }
+    }
+
+    private void OnValidate()
+    {
+        if (_renderer == null)
+        {
+            _renderer = GetComponent<Renderer>();
         }
     }
 }

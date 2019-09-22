@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public abstract class Health : MonoBehaviour
@@ -11,6 +10,7 @@ public abstract class Health : MonoBehaviour
     }
 
     [SerializeField] private int _maxHealth;
+    [SerializeField] private ColorShaderUpdater _colorShader;
 
     public int CurrentHealth { get; set; }
 
@@ -37,6 +37,8 @@ public abstract class Health : MonoBehaviour
     {
         IsInvincible = true;
         Invoke(nameof(DisableInvincibility), timeFrame);
+
+        UpdateColorShader();
     }
 
     protected int HealInternal(int healing)
@@ -53,6 +55,15 @@ public abstract class Health : MonoBehaviour
     private void DisableInvincibility()
     {
         IsInvincible = false;
+        UpdateColorShader();
+    }
+
+    private void UpdateColorShader()
+    {
+        if (_colorShader == null)
+            return;
+
+        _colorShader.Tint = IsInvincible ? ColorTint.OutlineOnly : ColorTint.None;
     }
 
     private void Awake()
