@@ -2,6 +2,8 @@
 
 public abstract class BasePickUp : MonoBehaviour, IPickUp
 {
+    private Transform _spawnPoint;
+
     private bool _isActive = false;
     public bool IsActive
     {
@@ -16,9 +18,10 @@ public abstract class BasePickUp : MonoBehaviour, IPickUp
     public abstract bool IsCollector(GameObject collidedObject);
     public abstract void OnCollection(GameObject collidedObject);
 
-    public void Spawn(Vector2 position, float? timeOut)
+    public void Spawn(Transform spawnPoint, float? timeOut)
     {
-        transform.position = position;
+        _spawnPoint = spawnPoint;
+        transform.position = spawnPoint.position;
         IsActive = true;
 
         if (timeOut.HasValue)
@@ -38,7 +41,10 @@ public abstract class BasePickUp : MonoBehaviour, IPickUp
 
     private void Despawn()
     {
-        // Disabling object to return to pool
+        // Disabling object & return to pool
         IsActive = false;
+
+        PickUpSystem.Instance.DespawnPickup(_spawnPoint);
+        _spawnPoint = null;
     }
 }

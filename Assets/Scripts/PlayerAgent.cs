@@ -38,6 +38,7 @@ public abstract class PlayerAgent : Agent
         _playerController.horizontalMovement = Mathf.Clamp(vectorAction[0], -1, 1);
         _playerController.verticalMovement = Mathf.Clamp(vectorAction[1], -1, 1);
         _playerController.isFiring = vectorAction[2] > 0;
+        _playerController.rsHorizontalMovement = Mathf.Clamp(vectorAction[3], -1, 1);
     }
 
     public override void AgentOnDone()
