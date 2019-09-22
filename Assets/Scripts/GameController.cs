@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     private bool _playersWon;
-    public bool GameEnded = false;
+    public bool PlayersWon => _playersWon;
+    public bool GameEnded;
     public float _timer;
 
     private void Awake()
@@ -20,11 +21,12 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("AButton"))
         {
             SceneManager.LoadScene(0);
+            GameEnded = false;
         }
 
         CheckForGameOver();
@@ -37,19 +39,24 @@ public class GameController : MonoBehaviour
             return;
         }
 
+        if (PlayerService.Instance.Players.Length == 0)
+        {
+            return;
+        }
+        
         var player1Hp = PlayerService.Instance.Players[0].PlayerHealth.CurrentHealth;
         var player2Hp = PlayerService.Instance.Players[1].PlayerHealth.CurrentHealth;
 
         var ufoHp = UfoService.Instance.Ufo.Health.CurrentHealth;
         var alienHp = UfoService.Instance.Alien.Health.CurrentHealth;
 
-        if (player1Hp <= 0 && player2Hp <= 0)
+        if (player1Hp <= 0 && player2Hp <= 0 && !GameEnded)
         {
             StartCoroutine(SetGameOver(false));
             return;
         }
 
-        if (ufoHp <= 0)
+        if (ufoHp <= 0 && !GameEnded)
         {
             UfoService.Instance.Ufo.gameObject.SetActive(false);
             UfoService.Instance.Alien.gameObject.SetActive(true);
@@ -68,6 +75,9 @@ public class GameController : MonoBehaviour
         _playersWon = didPlayersWin;
         SceneManager.LoadScene(2);
 
+        PlayerService.Instance.Players[0].PlayerHealth.CurrentHealth = 1;
+        PlayerService.Instance.Players[1].PlayerHealth.CurrentHealth = 1;
+        
         yield return new WaitForSeconds(.1f);
 
         var gameOverController = FindObjectOfType<GameOverController>();

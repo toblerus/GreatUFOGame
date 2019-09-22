@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
-  _maxArmor: 100
+  _maxArmor: 150
 --- !u!4 &668175324
 Transform:
   m_ObjectHideFlags: 0
@@ -741,11 +741,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7631276809453458240, guid: 52d25b0919ea2774b87662ca849d7dd6,
-        type: 3}
-      propertyPath: _maxHealth
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 6179314461357358360, guid: 52d25b0919ea2774b87662ca849d7dd6,
         type: 3}
       propertyPath: m_Name
@@ -1323,6 +1318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 4385273611043211745, guid: ee6951ebb5fbc3146b1e8a84a137660d,
+        type: 3}
+      propertyPath: ufoPosition
+      value: 
+      objectReference: {fileID: 979913384}
     - target: {fileID: 4385273611043211746, guid: ee6951ebb5fbc3146b1e8a84a137660d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1378,11 +1378,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4385273611043211745, guid: ee6951ebb5fbc3146b1e8a84a137660d,
-        type: 3}
-      propertyPath: ufoPosition
-      value: 
-      objectReference: {fileID: 979913384}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee6951ebb5fbc3146b1e8a84a137660d, type: 3}
 --- !u!1001 &3061964411732543454
@@ -1466,6 +1461,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 3749389906880100070, guid: 570e5ba73a7840744a7f2694b391ae88,
+        type: 3}
+      propertyPath: ufoPosition
+      value: 
+      objectReference: {fileID: 979913384}
     - target: {fileID: 3749389906880100069, guid: 570e5ba73a7840744a7f2694b391ae88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1521,11 +1521,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3749389906880100070, guid: 570e5ba73a7840744a7f2694b391ae88,
-        type: 3}
-      propertyPath: ufoPosition
-      value: 
-      objectReference: {fileID: 979913384}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570e5ba73a7840744a7f2694b391ae88, type: 3}
 --- !u!1001 &4344449530653098056
@@ -1594,11 +1589,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707686786677257231, guid: 41354f2976cdd314d99a9b0283eccd32,
-        type: 3}
-      propertyPath: _maxHealth
-      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41354f2976cdd314d99a9b0283eccd32, type: 3}

@@ -277,8 +277,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AlienArmAttack.cs" t="Include" />
+          <e p="AlienArmMotion.cs" t="Include" />
           <e p="AlienBoss.cs" t="Include" />
           <e p="AlienBossAgent.cs" t="Include" />
+          <e p="AlienController.cs" t="Include" />
           <e p="AttackHelper.cs" t="Include" />
           <e p="BaseBullet.cs" t="Include" />
           <e p="BasePickUp.cs" t="Include" />
@@ -290,18 +293,20 @@
           <e p="ColorShaderUpdater.cs" t="Include" />
           <e p="ColorTint.cs" t="Include" />
           <e p="Container.cs" t="Include" />
-          <e p="Explosion.cs" t="Include" />
+          <e p="DisplayHighscores.cs" t="Include" />
           <e p="FirstStagePlayerAgent.cs" t="Include" />
           <e p="FloatingAnimation.cs" t="Include" />
           <e p="GameAcademy.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="Health.cs" t="Include" />
+          <e p="Highscores.cs" t="Include" />
           <e p="HighscoreUI.cs" t="Include" />
           <e p="InvincibilityPickUp.cs" t="Include" />
           <e p="IPickUp.cs" t="Include" />
           <e p="LaserBullet.cs" t="Include" />
           <e p="MainMenuUI.cs" t="Include" />
           <e p="ManualPlayerControl.cs" t="Include" />
+          <e p="OneTimeDamageDealer.cs" t="Include" />
           <e p="OutlineShader.shader" t="Include" />
           <e p="PickUpSystem.cs" t="Include" />
           <e p="PlayerAgent.cs" t="Include" />

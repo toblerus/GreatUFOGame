@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HighscoreUI : MonoBehaviour
 {
@@ -21,21 +18,18 @@ public class HighscoreUI : MonoBehaviour
 
     private float time;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (!GameController.Instance.PlayersWon)
+            return;
+        
         if ((time > switchDelay))
         {
-            var inputHorizontal = Input.GetAxis("Vertical1");
-            if (inputHorizontal != 0)
+            var inputVertical = Input.GetAxis("Vertical1");
+            if (inputVertical != 0)
             {
-                selectedLetter += (int)inputHorizontal;
+                selectedLetter += (int)inputVertical;
                 if (selectedLetter >= alphabet.Length)
                 {
                     selectedLetter = 0;
@@ -45,13 +39,12 @@ public class HighscoreUI : MonoBehaviour
                     selectedLetter = alphabet.Length - 1;
                 }
                 time = 0;
-
             }
 
-            var inputVertical = Input.GetAxis("Horizontal1");
-            if (inputVertical != 0)
+            var inputHorizontal = Input.GetAxis("Horizontal1");
+            if (inputHorizontal != 0)
             {
-                selectedBox += (int)inputVertical;
+                selectedBox += (int)inputHorizontal;
                 if (selectedBox >= letterBoxes.Length)
                 {
                     selectedBox = 0;
@@ -64,17 +57,17 @@ public class HighscoreUI : MonoBehaviour
             }
         }
         time += Time.deltaTime;
-        updateUI(selectedBox);
-        submit();
+        UpdateUi(selectedBox);
+        Submit();
     }
 
-    void updateUI(int index)
+    void UpdateUi(int index)
     {
         letterBoxes[index].text = alphabet[selectedLetter].ToString();
         arrow.transform.position = letterBoxes[index].transform.position;
     }
 
-    void submit()
+    void Submit()
     {
         var inputHorizontal = Input.GetButton("YButton");
         if (inputHorizontal)
