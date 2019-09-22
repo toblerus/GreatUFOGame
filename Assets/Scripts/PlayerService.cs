@@ -28,8 +28,6 @@ public class PlayerService : MonoBehaviour
 
         Instance = this;
 
-        _players = FindObjectsOfType<PlayerController>();
-        if (_players.Length == 0)
-            Debug.LogError("No players were found in the scene.");
+        _players = new[] {Container.Instance.Player1, Container.Instance.Player2};
     }
 }

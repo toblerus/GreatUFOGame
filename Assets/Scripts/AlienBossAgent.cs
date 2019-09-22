@@ -12,9 +12,8 @@ public class AlienBossAgent : Agent
 
     public override void CollectObservations()
     {
-        var players = FindObjectsOfType<PlayerController>();
-        var player1 = players.Single(player => player.name == "Player1");
-        var player2 = players.Single(player => player.name == "Player2");
+        var player1 = Container.Instance.Player1;
+        var player2 = Container.Instance.Player2;
         
         AddVectorObs(transform.localPosition);
         AddVectorObs(player1.transform.localPosition);

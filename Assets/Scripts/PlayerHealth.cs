@@ -32,10 +32,8 @@ public class PlayerHealth : Health
 
         if (IsDead)
         {
-            foreach (var playerAgent in FindObjectsOfType<PlayerAgent>())
-            {
-                playerAgent.OnDeath();
-            }
+            Container.Instance.Player1Agent.OnDeath();
+            Container.Instance.Player2Agent.OnDeath();
         }
     }
 }

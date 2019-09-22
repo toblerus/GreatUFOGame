@@ -31,7 +31,7 @@ public class PlayerBullet : BaseBullet
 
     private void RewardAi()
     {
-        var owner = FindObjectsOfType<FirstStagePlayerAgent>().Single(player => name.Contains(player.name));
+        var owner = PlayerService.Instance.Players.Single(player => name.Contains(player.name)).GetComponent<FirstStagePlayerAgent>();
 
         if (owner.enabled)
             owner.OnDealingDamage(Damage);
