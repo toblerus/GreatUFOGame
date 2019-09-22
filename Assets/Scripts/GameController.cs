@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
             Destroy(gameObject);
 
         Instance = this;
@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        
+
         CheckForGameOver();
     }
 
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
         {
             return;
         }
-        
+
         var player1Hp = PlayerService.Instance.Players[0].PlayerHealth.CurrentHealth;
         var player2Hp = PlayerService.Instance.Players[1].PlayerHealth.CurrentHealth;
 
@@ -57,15 +57,18 @@ public class GameController : MonoBehaviour
     private IEnumerator SetGameOver(bool didPlayersWin)
     {
         GameEnded = true;
-        
+
         _playersWon = didPlayersWin;
         SceneManager.LoadScene(2);
 
-        yield return new WaitForSeconds(.2f);
-        
-        var winnerText = FindObjectOfType<GameOverController>().WinnerText;
+        yield return new WaitForSeconds(.1f);
+
+        var gameOverController = FindObjectOfType<GameOverController>();
+        var winnerText = gameOverController.WinnerText;
         winnerText.text = _playersWon
             ? "Players were victorious!"
             : "The Aliens have won!";
+
+        gameOverController.HighScoreUi.gameObject.SetActive(_playersWon);
     }
 }

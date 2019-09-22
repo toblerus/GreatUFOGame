@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using DefaultNamespace;
 using MLAgents;
 using MLAgents.CommunicatorObjects;
 using UnityEngine;
@@ -23,7 +24,7 @@ public abstract class PlayerAgent : Agent
             : Container.Instance.Player1;
         
         AddVectorObs((Vector2) self.transform.localPosition);
-        AddVectorObs((Vector2) other.transform.localPosition);
+        //AddVectorObs((Vector2) other.transform.localPosition);
 
         AddEnemyObservations();
     }
@@ -70,20 +71,24 @@ public abstract class PlayerAgent : Agent
         }
 
         transform.localPosition = _startingPosition;
+
+        UfoService.Instance.Ufo.gameObject.SetActive(false);
+        UfoService.Instance.Ufo.gameObject.SetActive(true);
     }
 
     public void OnTakingDamage(int damage)
     {
-        AddReward(damage);
+        AddReward(-damage);
     }
 
     public void OnDealingDamage(int damage)
     {
-        AddReward(damage);
+        // AddReward(damage);
     }
 
     public void OnDeath()
     {
+        AddReward(GetStepCount());
         Done();
     }
 }

@@ -296,6 +296,7 @@
           <e p="GameAcademy.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="Health.cs" t="Include" />
+          <e p="HighscoreUI.cs" t="Include" />
           <e p="InvincibilityPickUp.cs" t="Include" />
           <e p="IPickUp.cs" t="Include" />
           <e p="LaserBullet.cs" t="Include" />
