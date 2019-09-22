@@ -35,6 +35,7 @@ public class UfoController : MonoBehaviour
             
             var sprite = ufoAttackMapping.Config.GetTurretSprite();
             turretPrefab.SetTurretSprite(sprite);
+            turretPrefab.Ufo = transform;
 
             ufoAttackMapping.Anchor = turretPrefab.BulletSpawnPoint;
         }
@@ -45,6 +46,7 @@ public class UfoController : MonoBehaviour
         while (!_health.IsDead)
         {
             var selectedAttack = _attackMappings[Random.Range(0, _attackMappings.Count)];
+            Debug.LogWarning("Bullet creation for " + selectedAttack.Config.name + " started");
 
             yield return StartCoroutine(selectedAttack.Config.CreateBullets(selectedAttack.Anchor, _health));
             Debug.LogWarning("Bullet creation for " + selectedAttack.Config.name + " completed");
