@@ -5,13 +5,12 @@ public class FirstStagePlayerAgent: PlayerAgent
 {
     protected override void AddEnemyObservations()
     {
-        var bullets = FindObjectsOfType<BaseBullet>()
-            .Where(bullet => bullet.BulletType != BulletType.PlayerBullet)
-            .OrderBy(bullet => Vector2.Distance(transform.localPosition, bullet.transform.localPosition))
+        var bullets = Container.Instance.Ufo.BulletParent
+            .Cast<Transform>()
+            .Select(child => child.GetComponent<BaseBullet>())
             .ToList();
-
-
-        for (var i = 1; i <= 5; i++)
+        
+        for (var i = 1; i <= 30; i++)
         {
             if (bullets.Count >= i)
             {

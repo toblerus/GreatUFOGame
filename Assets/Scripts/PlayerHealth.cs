@@ -31,6 +31,9 @@ public class PlayerHealth : Health
         _playerAgent.OnTakingDamage(damage);
 
         if (IsDead)
-            _playerAgent.OnDeath();
+        {
+            Container.Instance.Player1Agent.OnDeath();
+            Container.Instance.Player2Agent.OnDeath();
+        }
     }
 }

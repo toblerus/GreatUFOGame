@@ -361,6 +361,36 @@ Transform:
   m_Father: {fileID: 4344449530865935576}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1476477003913301544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533565148275289573}
+  m_Layer: 0
+  m_Name: BulletParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1533565148275289573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476477003913301544}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4344449530865935576}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4344449530865935559
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +427,7 @@ Transform:
   - {fileID: 1847540965924664943}
   - {fileID: 4823271264495075751}
   - {fileID: 6592097372658057597}
+  - {fileID: 1533565148275289573}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -412,6 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f56d4fc6181489389d5cf58538b275d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialShootingDelay: 0
+  BulletParent: {fileID: 1533565148275289573}
   _turretPrefab: {fileID: 5658724922136668320, guid: e79a6c779e980444e881b5f8bc86f034,
     type: 3}
   _health: {fileID: 2707686786677257231}
@@ -450,7 +483,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b0b4663b50431bb9e4d64d8efd9eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderers:
+  - {fileID: 7058401700597894118}
+  - {fileID: 4344449531317930788}
+  - {fileID: 7050195102149917911}
+  _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
   _maxHealth: 1200000
+  _colorShader: {fileID: 0}
   _damagePerSecond: 1
 --- !u!114 &483435664
 MonoBehaviour:

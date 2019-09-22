@@ -18,7 +18,9 @@ public abstract class PlayerAgent : Agent
     public override void CollectObservations()
     {
         var self = _playerController;
-        var other = FindObjectsOfType<PlayerController>().Single(player => player.gameObject != gameObject);
+        var other = name == "Player1"
+            ? Container.Instance.Player2
+            : Container.Instance.Player1;
         
         AddVectorObs((Vector2) self.transform.localPosition);
         AddVectorObs((Vector2) other.transform.localPosition);
@@ -53,14 +55,19 @@ public abstract class PlayerAgent : Agent
         health.CurrentHealth = health.MaxHealth;
         health.IsDead = false;
         health.IsInvincible = false;
-        health.SetInvincible(2f);
 
-        foreach (var bullet in FindObjectsOfType<PlayerBullet>().Where(bullet => bullet.name.Contains(name)))
+        foreach (var player in PlayerService.Instance.Players)
         {
-            bullet.DestroyBullet();
+            foreach (Transform child in player.BulletParent)
+            {
+                Destroy(child.gameObject);
+            }
         }
 
-        
+        foreach (Transform child in Container.Instance.Ufo.BulletParent)
+        {
+            Destroy(child.gameObject);
+        }
 
         transform.localPosition = _startingPosition;
     }

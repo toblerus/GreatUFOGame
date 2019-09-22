@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6112138266626852087}
   - component: {fileID: 6800782912618996781}
   - component: {fileID: 1488170364657998796}
+  - component: {fileID: 904441754757433745}
   m_Layer: 0
   m_Name: prefab_invincibility_pickup
   m_TagString: Untagged
@@ -67,7 +68,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5a14dea1a8a60ee488c4b9a503ddfdb3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,6 +113,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invincibilityTimeFrame: 3.14
+--- !u!114 &904441754757433745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2454240781560907516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8ceb5010d2c654d9423d63afe95563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 6800782912618996781}
+  _bodyColor: {r: 1, g: 0.9137255, b: 0.41960785, a: 1}
+  _outlineColor: {r: 1, g: 0.8509804, b: 0, a: 1}
+  _initialTint: 10
 --- !u!1 &6969203216870597532
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,10 @@ using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer[] _spritesToFlash;
+    
+    public SpriteRenderer[] SpritesToFlash => _spritesToFlash;
+    
     [Header("References")]
     [SerializeField] private BaseBullet bullet;
     [SerializeField] private GameObject playerArm;
@@ -12,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidbody2d;
     [SerializeField] private PlayerHealth healthscript;
     [SerializeField] private ManualPlayerControl manualPlayerController;
+    public Transform BulletParent;
 
     public PlayerHealth PlayerHealth => healthscript;
 
@@ -82,7 +87,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(vibrate(manualPlayerController.PlayerIndex, 0.1f));
             time = 0;
-            var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
+            var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity, BulletParent);
             spawnedBullet.MoveTowards(playerArm.transform.up, projectileSpeed);
             spawnedBullet.name += name;
             Input.GetJoystickNames();

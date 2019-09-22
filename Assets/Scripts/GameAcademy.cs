@@ -4,12 +4,6 @@ public class GameAcademy : Academy
 {
     public override void InitializeAcademy()
     {
-        foreach (var playerHealth in FindObjectsOfType<PlayerHealth>())
-        {
-            playerHealth.MaxHealth += PlayerArmor.Instance.MaxArmor;
-            playerHealth.CurrentHealth = playerHealth.MaxHealth;
-        }
-
         foreach (var control in FindObjectsOfType<ManualPlayerControl>())
         {
             control.enabled = false;
@@ -19,8 +13,5 @@ public class GameAcademy : Academy
         {
             agent.enabled = true;
         }
-
-        PlayerArmor.Instance.MaxArmor = 0;
-        PlayerArmor.Instance.CurrentArmor = 0;
     }
 }

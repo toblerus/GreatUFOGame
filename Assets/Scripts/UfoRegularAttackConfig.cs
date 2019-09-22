@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "UfoRegularAttackConfig", menuName = "Config/Ufo Regular Attack Config")]
 public class UfoRegularAttackConfig : UfoAttackConfig
 {
-    protected override IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health)
+    protected override IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health, Transform bulletParent)
     {
         var spawnedBullets = 0;
         while (spawnedBullets < ProjectileCount)
@@ -16,7 +16,7 @@ public class UfoRegularAttackConfig : UfoAttackConfig
             for (var i = 0; i < BulletBatchSize; i++)
             {
                 var bulletPrefab = Bullets[Random.Range(0, Bullets.Count)];
-                var spawnedBullet = Instantiate(bulletPrefab, ufo.position, Quaternion.identity);
+                var spawnedBullet = Instantiate(bulletPrefab, ufo.position, Quaternion.identity, bulletParent);
                 spawnedBullet.MoveTowards(direction, ProjectileSpeed);
 
                 if (MuzzleFlash != null)

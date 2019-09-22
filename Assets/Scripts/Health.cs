@@ -1,9 +1,13 @@
 ﻿using System;
-using System.Security.Cryptography;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer[] _spriteRenderers;
+    
+    [SerializeField] private Color _flashColor;
+    
     public int MaxHealth
     {
         get => _maxHealth;
@@ -11,6 +15,7 @@ public abstract class Health : MonoBehaviour
     }
 
     [SerializeField] private int _maxHealth;
+    [SerializeField] private ColorShaderUpdater _colorShader;
 
     public int CurrentHealth { get; set; }
 
@@ -27,6 +32,11 @@ public abstract class Health : MonoBehaviour
         CurrentHealth = Math.Max(CurrentHealth - damage, 0);
         IsDead = CurrentHealth == 0;
 
+        if(damage > 1 && !IsInvincible)
+        {
+            StartCoroutine(Flash());
+        }
+        
         if (IsDead || !invincibilityTime.HasValue)
             return;
 
@@ -37,6 +47,22 @@ public abstract class Health : MonoBehaviour
     {
         IsInvincible = true;
         Invoke(nameof(DisableInvincibility), timeFrame);
+
+        UpdateColorShader();
+    }
+    
+    private IEnumerator Flash()
+    {
+        foreach (var sprite in _spriteRenderers)
+        {
+            sprite.color = _flashColor;
+        }
+        yield return new WaitForSeconds(.1f);
+
+        foreach (var sprite in _spriteRenderers)
+        {
+            sprite.color = Color.white;
+        }
     }
 
     protected int HealInternal(int healing)
@@ -53,6 +79,15 @@ public abstract class Health : MonoBehaviour
     private void DisableInvincibility()
     {
         IsInvincible = false;
+        UpdateColorShader();
+    }
+
+    private void UpdateColorShader()
+    {
+        if (_colorShader == null)
+            return;
+
+        _colorShader.Tint = IsInvincible ? ColorTint.OutlineOnly : ColorTint.None;
     }
 
     private void Awake()

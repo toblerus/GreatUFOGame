@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8221713110036251367}
   - component: {fileID: 5658724922136668320}
+  - component: {fileID: -2463198948066381237}
   m_Layer: 0
   m_Name: prefab_turret
   m_TagString: Untagged
@@ -77,6 +78,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turretSprite: {fileID: 8221713110380020961}
   _bulletSpawnPoint: {fileID: 7812958233683853012}
+--- !u!114 &-2463198948066381237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221713110036251366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621d0d1ee76cfc4e8dc38e45ceac4dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8221713110380020963
 GameObject:
   m_ObjectHideFlags: 0
