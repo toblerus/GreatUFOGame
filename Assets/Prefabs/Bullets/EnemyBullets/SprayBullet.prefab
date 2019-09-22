@@ -132,8 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d67c648ca8849939924bc80f5f506a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidBody: {fileID: 8618021018823175106, guid: eb0e92001e483ef478afdb89ac6b9457,
-    type: 3}
+  _rigidBody: {fileID: 8618021018823175106}
   _maxSideWayOffset: 5
   _bulletType: 20
   _damage: 2

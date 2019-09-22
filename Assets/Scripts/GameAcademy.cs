@@ -21,5 +21,6 @@ public class GameAcademy : Academy
         }
 
         PlayerArmor.Instance.MaxArmor = 0;
+        PlayerArmor.Instance.CurrentArmor = 0;
     }
 }

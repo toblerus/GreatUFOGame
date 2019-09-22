@@ -53,23 +53,30 @@ public abstract class PlayerAgent : Agent
         health.CurrentHealth = health.MaxHealth;
         health.IsDead = false;
         health.IsInvincible = false;
+        health.SetInvincible(2f);
+
+        foreach (var bullet in FindObjectsOfType<PlayerBullet>().Where(bullet => bullet.name.Contains(name)))
+        {
+            bullet.DestroyBullet();
+        }
+
+        
 
         transform.localPosition = _startingPosition;
     }
 
     public void OnTakingDamage(int damage)
     {
-        AddReward(-damage);
+        AddReward(damage);
     }
 
     public void OnDealingDamage(int damage)
     {
-        AddReward(10 * damage);
+        AddReward(damage);
     }
 
     public void OnDeath()
     {
-        AddReward(-100);
         Done();
     }
 }

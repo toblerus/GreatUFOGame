@@ -8,7 +8,7 @@ public class PlayerArmor : MonoBehaviour
     public int MaxArmor { get { return _maxArmor; } set { _maxArmor = value; } }
     [SerializeField] private int _maxArmor;
 
-    public int CurrentArmor { get; private set; }
+    public int CurrentArmor { get; set; }
     
     public int DamageArmor(int damage)
     {
