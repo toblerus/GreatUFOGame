@@ -418,11 +418,11 @@ MonoBehaviour:
   _attackMappings:
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 730893240}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 739307221}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 514708975}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 571068629}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 595332451}
@@ -430,11 +430,11 @@ MonoBehaviour:
     Anchor: {fileID: 1719762117}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 2017088179}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 1920617347}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 5075492}
-  - Config: {fileID: 11400000, guid: 69f0991c806151a4da74fc18e0e914b4, type: 2}
+  - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 1463668755}
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
     Anchor: {fileID: 1603173085}
