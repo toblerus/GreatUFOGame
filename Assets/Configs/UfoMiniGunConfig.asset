@@ -22,5 +22,6 @@ MonoBehaviour:
   _bullets:
   - {fileID: -3835194050501035488, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
   _chargeUpVfx: {fileID: 0}
-  _muzzleFlash: {fileID: 0}
-  _muzzleFlashDuration: 0
+  _muzzleFlash: {fileID: 7276984478291554056, guid: b3c6447e0cebde7419ca11e798f62077,
+    type: 3}
+  _muzzleFlashDuration: 0.1
