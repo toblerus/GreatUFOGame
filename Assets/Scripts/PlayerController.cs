@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerArmTip;
     [SerializeField] private Rigidbody2D rigidbody2d;
     [SerializeField] private PlayerHealth healthscript;
+    [SerializeField] private ManualPlayerControl manualPlayerController;
 
     public PlayerHealth PlayerHealth => healthscript;
 
@@ -72,6 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isFiring && (time > shootDelay))
         {
+            StartCoroutine(vibrate(manualPlayerController.PlayerIndex, 0.1f));
             time = 0;
             var spawnedBullet = Instantiate(bullet, playerArmTip.transform.position, Quaternion.identity);
             spawnedBullet.MoveTowards(ufoPosition.position - transform.position, projectileSpeed);
@@ -101,15 +105,13 @@ public class PlayerController : MonoBehaviour
         healthscript.CurrentHealth = healthscript.MaxHealth;
     }
     
-/*
-    IEnumerator vibrate(PlayerIndex index, float duration)
+    IEnumerator vibrate(int index, float duration)
     {
-        GamePad.SetVibration(index, 1f, 1f);
+        GamePad.SetVibration(index == 1 ? PlayerIndex.One : PlayerIndex.Two, 1f, 1f);
 
         yield return new WaitForSeconds(duration);
-        GamePad.SetVibration(index, 0f, 0f);
+        GamePad.SetVibration(index == 1 ? PlayerIndex.One : PlayerIndex.Two, 0f, 0f);
 
         yield return null;
     }
-    */
 }
