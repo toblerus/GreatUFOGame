@@ -3,11 +3,11 @@ using MLAgents;
 using MLAgents.CommunicatorObjects;
 using UnityEngine;
 
-public class BossAgent : Agent
+public class AlienBossAgent : Agent
 {
     public override void InitializeAgent()
     {
-
+        
     }
 
     public override void CollectObservations()
@@ -25,7 +25,7 @@ public class BossAgent : Agent
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
-        var boss = GetComponent<Boss>();
+        var boss = GetComponent<AlienBoss>();
 
         boss.HorizontalMovement = Mathf.Clamp(vectorAction[0], -1, 1);
         boss.VerticalMovement = Mathf.Clamp(vectorAction[1], -1, 1);

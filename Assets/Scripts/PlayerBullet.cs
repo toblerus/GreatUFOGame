@@ -21,5 +21,7 @@ public class PlayerBullet : BaseBullet
         {
             bossHealth.Damage(Damage, null);
         }
+        
+        DestroyBullet();
     }
 }

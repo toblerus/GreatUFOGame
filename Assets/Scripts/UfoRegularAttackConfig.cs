@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UfoMiniGunConfig", menuName = "Config/Ufo Mini-Gun Config")]
-public class UfoMiniGunConfig : UfoAttackConfig
+[CreateAssetMenu(fileName = "UfoRegularAttackConfig", menuName = "Config/Ufo Regular Attack Config")]
+public class UfoRegularAttackConfig : UfoAttackConfig
 {
     protected override IEnumerator InstantiateBullets(Transform ufo, Transform target, Health health)
     {
