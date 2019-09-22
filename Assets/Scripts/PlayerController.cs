@@ -5,6 +5,10 @@ using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer[] _spritesToFlash;
+    
+    public SpriteRenderer[] SpritesToFlash => _spritesToFlash;
+    
     [Header("References")]
     [SerializeField] private BaseBullet bullet;
     [SerializeField] private GameObject playerArm;

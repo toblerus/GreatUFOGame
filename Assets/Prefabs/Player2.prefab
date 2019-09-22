@@ -256,6 +256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c785d8ae498faa8449153e61558c1b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spritesToFlash:
+  - {fileID: 4385273611064079804}
+  - {fileID: 4385273609506212181}
   bullet: {fileID: 2078637632043019374, guid: 35c9921074ca9ff4884cba664988d16b, type: 3}
   playerArm: {fileID: 4385273610956156483}
   playerArmTip: {fileID: 4385273611177937838}
@@ -263,6 +266,7 @@ MonoBehaviour:
   healthscript: {fileID: 2098471954}
   manualPlayerController: {fileID: 0}
   BulletParent: {fileID: 573828486057714094}
+  manualPlayerController: {fileID: -3137212152195378389}
   ufoPosition: {fileID: 0}
   loweredMovementSpeed: 2.5
   standardMovementSpeed: 5
@@ -333,6 +337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a3c1cb8c1b44b3b4ee20406529ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderers:
+  - {fileID: 4385273609506212181}
+  - {fileID: 4385273611064079804}
+  _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
   _maxHealth: 1
   _colorShader: {fileID: 0}
   _playerAgent: {fileID: 6841097245212343812}

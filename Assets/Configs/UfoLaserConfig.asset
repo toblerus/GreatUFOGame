@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9f7305387b4ae3b9e7218f828a126d, type: 3}
   m_Name: UfoLaserConfig
   m_EditorClassIdentifier: 
+  _turretSprite: {fileID: 0}
   _windUpDelay: 3
   _attackDelay: 0
   _batchDelay: 0
-  _coolDownDelay: 5
+  _coolDownDelay: 30
   _projectileSpeed: 50
   _projectileCount: 1
   _bulletBatchSize: 1

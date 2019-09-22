@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer[] _spriteRenderers;
+    
+    [SerializeField] private Color _flashColor;
+    
     public int MaxHealth
     {
         get => _maxHealth;
@@ -27,6 +32,11 @@ public abstract class Health : MonoBehaviour
         CurrentHealth = Math.Max(CurrentHealth - damage, 0);
         IsDead = CurrentHealth == 0;
 
+        if(damage > 1 && !IsInvincible)
+        {
+            StartCoroutine(Flash());
+        }
+        
         if (IsDead || !invincibilityTime.HasValue)
             return;
 
@@ -39,6 +49,20 @@ public abstract class Health : MonoBehaviour
         Invoke(nameof(DisableInvincibility), timeFrame);
 
         UpdateColorShader();
+    }
+    
+    private IEnumerator Flash()
+    {
+        foreach (var sprite in _spriteRenderers)
+        {
+            sprite.color = _flashColor;
+        }
+        yield return new WaitForSeconds(.1f);
+
+        foreach (var sprite in _spriteRenderers)
+        {
+            sprite.color = Color.white;
+        }
     }
 
     protected int HealInternal(int healing)

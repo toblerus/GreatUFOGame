@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: UfoSprayGunConfig
   m_EditorClassIdentifier: 
   _turretSprite: {fileID: 21300000, guid: 8a6ac46f94d47794b8a6877bac69e02d, type: 3}
-  _windUpDelay: 0.5
+  _windUpDelay: 0.2
   _attackDelay: 0.1
-  _batchDelay: 2
-  _coolDownDelay: 2
-  _projectileSpeed: 1
-  _projectileCount: 15
-  _bulletBatchSize: 5
+  _batchDelay: 1
+  _coolDownDelay: 0.5
+  _projectileSpeed: 2
+  _projectileCount: 30
+  _bulletBatchSize: 10
   _bullets:
   - {fileID: -6477015756842047207, guid: d0ebc70beb656424d8d950de36bdabea, type: 3}
   _chargeUpVfx: {fileID: 0}
