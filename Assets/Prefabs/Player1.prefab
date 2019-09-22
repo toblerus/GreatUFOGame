@@ -128,7 +128,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5a14dea1a8a60ee488c4b9a503ddfdb3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 3749389906880100056}
   - component: {fileID: 86240812}
   - component: {fileID: 4647318519134935356}
+  - component: {fileID: 1393422626530406978}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -255,12 +256,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c785d8ae498faa8449153e61558c1b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spritesToFlash:
+  - {fileID: 3749389906938137275}
+  - {fileID: 3749389906420872786}
   bullet: {fileID: 2078637632043019374, guid: 35c9921074ca9ff4884cba664988d16b, type: 3}
   playerArm: {fileID: 3749389906792304964}
   playerArmTip: {fileID: 3749389907014071465}
   rigidbody2d: {fileID: 3749389906880100071}
   healthscript: {fileID: 86240812}
+  manualPlayerController: {fileID: 0}
   BulletParent: {fileID: 9043399013441814820}
+  manualPlayerController: {fileID: 3164747789171699155}
   ufoPosition: {fileID: 0}
   loweredMovementSpeed: 2.5
   standardMovementSpeed: 5
@@ -268,6 +274,7 @@ MonoBehaviour:
   projectileSpeed: 5
   horizontalMovement: 0
   verticalMovement: 0
+  rsHorizontalMovement: 0
   isFiring: 0
   _screenShakeStrength: {x: 0.05, y: 0.05, z: 0.05}
   _shakeDuration: 0.25
@@ -330,7 +337,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a3c1cb8c1b44b3b4ee20406529ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderers:
+  - {fileID: 3749389906938137275}
+  - {fileID: 3749389906420872786}
+  _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
   _maxHealth: 1
+  _colorShader: {fileID: 0}
   _playerAgent: {fileID: 4647318519134935356}
 --- !u!114 &4647318519134935356
 MonoBehaviour:
@@ -353,6 +365,22 @@ MonoBehaviour:
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 1
   _playerController: {fileID: 3749389906880100070}
+--- !u!114 &1393422626530406978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749389906880100057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8ceb5010d2c654d9423d63afe95563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 3749389906420872786}
+  _bodyColor: {r: 0, g: 0, b: 0, a: 0}
+  _outlineColor: {r: 1, g: 0.84931326, b: 0, a: 1}
+  _initialTint: 0
 --- !u!1 &3749389906938137277
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,11 +581,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8841102473388944984}
     m_Modifications:
-    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
-        type: 3}
-      propertyPath: m_Name
-      value: ps_fire
-      objectReference: {fileID: 0}
     - target: {fileID: 9050917621455543043, guid: 997b376fe40f0534e83d79e417173718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -612,6 +635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
+        type: 3}
+      propertyPath: m_Name
+      value: ps_fire
       objectReference: {fileID: 0}
     - target: {fileID: 9044516379689351233, guid: 997b376fe40f0534e83d79e417173718,
         type: 3}
@@ -828,11 +856,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8841102473388944984}
     m_Modifications:
-    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
-        type: 3}
-      propertyPath: m_Name
-      value: ps_fire (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 9050917621455543043, guid: 997b376fe40f0534e83d79e417173718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -888,6 +911,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 9047635660255109359, guid: 997b376fe40f0534e83d79e417173718,
+        type: 3}
+      propertyPath: m_Name
+      value: ps_fire (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166154976454087447, guid: 997b376fe40f0534e83d79e417173718,
     - target: {fileID: 9172223266879567003, guid: 997b376fe40f0534e83d79e417173718,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r

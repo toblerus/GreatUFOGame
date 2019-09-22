@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class UfoController : MonoBehaviour
 {
+    [SerializeField] private float _initialShootingDelay;
+    
     [Serializable]
     public class UfoAttackMapping
     {
@@ -36,7 +38,6 @@ public class UfoController : MonoBehaviour
             
             var sprite = ufoAttackMapping.Config.GetTurretSprite();
             turretPrefab.SetTurretSprite(sprite);
-            turretPrefab.Ufo = transform;
 
             ufoAttackMapping.Anchor = turretPrefab.BulletSpawnPoint;
         }
@@ -51,6 +52,8 @@ public class UfoController : MonoBehaviour
     {
         while (!_health.IsDead)
         {
+            yield return new WaitForSeconds(_initialShootingDelay);
+            
             var selectedAttack = _attackMappings[Random.Range(0, _attackMappings.Count)];
             yield return StartCoroutine(selectedAttack.Config.CreateBullets(selectedAttack.Anchor, _health, BulletParent));
             Debug.LogWarning("Bullet creation for " + selectedAttack.Config.name + " completed");

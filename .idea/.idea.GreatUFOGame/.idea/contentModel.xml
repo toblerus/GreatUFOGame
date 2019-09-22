@@ -21,6 +21,7 @@
             </e>
           </e>
         </e>
+        <e p="FollowPlayer.cs" t="Include" />
         <e p="GameOverController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="ML-Agents" t="Include">
@@ -301,6 +302,7 @@
           <e p="MainMenuUI.cs" t="Include" />
           <e p="ManualPlayerControl.cs" t="Include" />
           <e p="OutlineShader.shader" t="Include" />
+          <e p="PickUpSystem.cs" t="Include" />
           <e p="PlayerAgent.cs" t="Include" />
           <e p="PlayerArmor.cs" t="Include" />
           <e p="PlayerBullet.cs" t="Include" />
