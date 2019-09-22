@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using XInputDotNetPure;
 
 public class GameOverController : MonoBehaviour
 {
@@ -14,7 +15,11 @@ public class GameOverController : MonoBehaviour
     
     public TextMeshProUGUI WinnerText => _winnerText;
 
-
+    private void Start()
+    {
+        GamePad.SetVibration(PlayerIndex.One, 0, 0);
+        GamePad.SetVibration(PlayerIndex.Two, 0, 0);
+    }
 
     private IEnumerator RestartGame()
     {
