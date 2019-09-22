@@ -521,7 +521,7 @@ MonoBehaviour:
   - {fileID: 4344449531317930788}
   - {fileID: 7050195102149917911}
   _flashColor: {r: 0.9372549, g: 0.06666667, b: 0.06666667, a: 1}
-  _maxHealth: 300
+  _maxHealth: 100
   _colorShader: {fileID: 0}
   _damagePerSecond: 1
 --- !u!114 &483435664
