@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 6030552897040263788}
   - component: {fileID: 2707686786677257231}
   - component: {fileID: 483435664}
+  - component: {fileID: 4343788607855000211}
   m_Layer: 0
   m_Name: Ufo
   m_TagString: Untagged
@@ -411,6 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f56d4fc6181489389d5cf58538b275d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _turretPrefab: {fileID: 5658724922136668320, guid: e79a6c779e980444e881b5f8bc86f034,
+    type: 3}
   _health: {fileID: 2707686786677257231}
   _attackMappings:
   - Config: {fileID: 11400000, guid: 7533d28c2a7daca4eb4a882f51ac4fc3, type: 2}
@@ -465,6 +468,22 @@ MonoBehaviour:
   _horizontalDistance: 1
   _verticalSpeed: 1
   _verticalDistance: 0.1
+--- !u!70 &4343788607855000211
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344449530865935559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 8}
+  m_Size: {x: 24.94, y: 1.3}
+  m_Direction: 1
 --- !u!1 &4344449531293240047
 GameObject:
   m_ObjectHideFlags: 0

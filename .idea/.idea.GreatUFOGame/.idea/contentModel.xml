@@ -310,6 +310,7 @@
           <e p="SecondStagePlayerAgent.cs" t="Include" />
           <e p="SfxAudioService.cs" t="Include" />
           <e p="SfxClip.cs" t="Include" />
+          <e p="TurretController.cs" t="Include" />
           <e p="UfoAttackConfig.cs" t="Include" />
           <e p="UfoBombThrowerConfig.cs" t="Include" />
           <e p="UfoController.cs" t="Include" />
