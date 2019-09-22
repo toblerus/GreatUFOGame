@@ -1,9 +1,8 @@
-﻿using System.Linq;
-using MLAgents;
+﻿using MLAgents;
 using MLAgents.CommunicatorObjects;
 using UnityEngine;
 
-public class PlayerAgent : Agent
+public abstract class PlayerAgent : Agent
 {
     [SerializeField] private PlayerController _playerController;
     
@@ -14,15 +13,18 @@ public class PlayerAgent : Agent
 
     public override void CollectObservations()
     {
-        var players = FindObjectsOfType<PlayerController>();
-
-        var self = players.Single(player => player.gameObject == gameObject);
-        var other = players.Single(player => player.gameObject != gameObject);
-
+        var self = _playerController;
+        var other = GetComponent<ManualPlayerControl>().PlayerIndex == 1
+            ? Container.Instance.Player2
+            : Container.Instance.Player1;
+        
         AddVectorObs((Vector2) self.transform.localPosition);
         AddVectorObs((Vector2) other.transform.localPosition);
-        AddVectorObs((Vector2) FindObjectOfType<Boss>().transform.localPosition);
+
+        AddEnemyObservations();
     }
+
+    protected abstract void AddEnemyObservations();
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {

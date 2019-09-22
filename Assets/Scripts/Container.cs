@@ -18,9 +18,9 @@ public class Container : MonoBehaviour
     public UfoController Ufo => _ufo;
     public BossHealth UfoHealth => _ufoHealth;
 
-    public Boss Boss => _boss;
-    public BossHealth BossHealth => _bossHealth;
-    public BossAgent BossAgent => _bossAgent;
+    public AlienBoss AlienBoss => _alienBoss;
+    public BossHealth AlienBossHealth => _alienBossHealth;
+    public AlienBossAgent AlienBossAgent => _alienBossAgent;
     
     [Header("Player1")]
     [SerializeField] private PlayerController _player1;
@@ -39,8 +39,8 @@ public class Container : MonoBehaviour
     [SerializeField] private BossHealth _ufoHealth;
 
     [Header("Alien Boss")]
-    [SerializeField] private Boss _boss;
-    [SerializeField] private BossHealth _bossHealth;
-    [SerializeField] private BossAgent _bossAgent;
+    [SerializeField] private AlienBoss _alienBoss;
+    [SerializeField] private BossHealth _alienBossHealth;
+    [SerializeField] private AlienBossAgent _alienBossAgent;
 
 }

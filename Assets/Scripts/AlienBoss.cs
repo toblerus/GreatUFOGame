@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class AlienBoss : MonoBehaviour
 {
     public float HorizontalMovement;
     public float VerticalMovement;
