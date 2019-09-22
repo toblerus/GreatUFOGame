@@ -67,7 +67,6 @@ public abstract class BaseBullet : MonoBehaviour
         if (CanCollide(other.gameObject))
         {
             OnCollide(other.gameObject);
-            DestroyBullet();
             HasCollided = true;
         }
     }

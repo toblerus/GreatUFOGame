@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb73a5a9e3b74184a0b965831ca0ef1f, type: 3}
-  m_Name: UfoLaserConfig
+  m_Script: {fileID: 11500000, guid: fd9f7305387b4ae3b9e7218f828a126d, type: 3}
+  m_Name: UfoLaserConfig 1
   m_EditorClassIdentifier: 
-  _windUpDelay: 3
+  _windUpDelay: 0
   _attackDelay: 0
-  _coolDownDelay: 5
-  _projectileSpeed: 2
-  _projectileCount: 1
-  _bullets:
-  - {fileID: -3835194050501035488, guid: eb0e92001e483ef478afdb89ac6b9457, type: 3}
-  _laserLifeTime: 0.5
+  _coolDownDelay: 0
+  _projectileSpeed: 0
+  _projectileCount: 0
+  _bullets: []

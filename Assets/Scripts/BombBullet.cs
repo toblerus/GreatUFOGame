@@ -27,6 +27,8 @@ public class BombBullet : BaseBullet
         Invoke(nameof(Explode), _explosionDelay);
         _warningEffect.SetActive(true);
         _collider.enabled = false;
+
+        DestroyBullet();
     }
 
     protected override void OnArrivedOnTarget()
